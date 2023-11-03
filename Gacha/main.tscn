@@ -1,0 +1,201 @@
+[gd_scene load_steps=26 format=3 uid="uid://dygmdff7w6ism"]
+
+[ext_resource type="Script" path="res://Gacha/main.gd" id="1_dkfca"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://bg.tscn" id="2_hyun0"]
+[ext_resource type="Script" path="res://Gacha/Once.gd" id="4_gy2qh"]
+[ext_resource type="Script" path="res://Gacha/TenTimes.gd" id="5_5w7ei"]
+[ext_resource type="Script" path="res://Gacha/Back.gd" id="5_u2rph"]
+[ext_resource type="Texture2D" uid="uid://dhcfisoiwimpc" path="res://png/player.png" id="6_cmakj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhohn"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxktb"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5lr6"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdse0"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlmyi"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbwww"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72wwt"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmjgo"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tfd3"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g28e0"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_718vq"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyjbx"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_886kf"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4api3"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaps3"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5yao"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67tle"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i21c0"]
+atlas = ExtResource("6_cmakj")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msgko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhohn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxktb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5lr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdse0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlmyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbwww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72wwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmjgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tfd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g28e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_718vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyjbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_886kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4api3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaps3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5yao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67tle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i21c0")
+}],
+"loop": false,
+"name": &"transition",
+"speed": 5.0
+}]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_dkfca")
+
+[node name="BG" parent="." instance=ExtResource("2_hyun0")]
+
+[node name="Once" type="Button" parent="."]
+offset_left = 275.0
+offset_top = 348.0
+offset_right = 424.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 25
+text = "抽 1 次"
+script = ExtResource("4_gy2qh")
+
+[node name="TenTimes" type="Button" parent="."]
+offset_left = 744.0
+offset_top = 348.0
+offset_right = 894.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 25
+text = "抽 10 次"
+script = ExtResource("5_5w7ei")
+
+[node name="Cards" type="Node2D" parent="."]
+
+[node name="Back" type="Button" parent="."]
+offset_left = 1017.0
+offset_top = 26.0
+offset_right = 1128.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 30
+text = "Back
+"
+script = ExtResource("5_u2rph")
+
+[node name="Continue" type="Button" parent="."]
+show_behind_parent = true
+offset_left = 1011.0
+offset_top = 19.0
+offset_right = 1136.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 25
+text = "Continue"
+
+[node name="Transition" type="AnimatedSprite2D" parent="."]
+position = Vector2(582, 364)
+scale = Vector2(4.62879, 3.8125)
+sprite_frames = SubResource("SpriteFrames_msgko")
+animation = &"transition"
+autoplay = "transition"
+
+[connection signal="pressed" from="Once" to="Once" method="_on_pressed"]
+[connection signal="pressed" from="TenTimes" to="TenTimes" method="_on_pressed"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="pressed" from="Continue" to="Once" method="_on_continue_pressed"]
+[connection signal="pressed" from="Continue" to="TenTimes" method="_on_continue_pressed"]
+[connection signal="animation_finished" from="Transition" to="Once" method="_on_transition_animation_finished"]
+[connection signal="animation_finished" from="Transition" to="TenTimes" method="_on_transition_animation_finished"]

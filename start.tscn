@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmooqripkn2pq"]
+
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://bg.tscn" id="1_2fwp6"]
+[ext_resource type="Script" path="res://start.gd" id="1_vv6dn"]
+[ext_resource type="Script" path="res://ToMain.gd" id="2_xkkte"]
+[ext_resource type="Script" path="res://ToStorage.gd" id="3_vbdcx"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_kjltk"]
+
+[node name="Start" type="Node2D"]
+position = Vector2(585, 362)
+script = ExtResource("1_vv6dn")
+
+[node name="BG" parent="." instance=ExtResource("1_2fwp6")]
+
+[node name="Draw" type="Button" parent="."]
+top_level = true
+use_parent_material = true
+offset_left = 319.0
+offset_top = 359.0
+offset_right = 464.0
+offset_bottom = 439.0
+theme_override_font_sizes/font_size = 40
+text = "抽卡"
+icon = SubResource("ImageTexture_kjltk")
+script = ExtResource("2_xkkte")
+
+[node name="Storage" type="Button" parent="."]
+top_level = true
+use_parent_material = true
+offset_left = 705.0
+offset_top = 362.0
+offset_right = 850.0
+offset_bottom = 442.0
+theme_override_font_sizes/font_size = 40
+text = "倉庫"
+icon = SubResource("ImageTexture_kjltk")
+script = ExtResource("3_vbdcx")
+
+[connection signal="pressed" from="Draw" to="Draw" method="_on_pressed"]
+[connection signal="pressed" from="Storage" to="Storage" method="_on_pressed"]
