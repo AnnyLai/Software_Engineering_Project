@@ -1,0 +1,14 @@
+Timer
+AnimatedSprite2D
+Node2D
+Sprite2D
+Label
+Button
+CanvasModulate
+PanelContainer
+MarginContainer
+ParallaxLayer
+TouchScreenButton
+CollisionShape2D
+CharacterBody2D
+ParallaxBackground
