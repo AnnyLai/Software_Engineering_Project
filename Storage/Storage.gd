@@ -18,11 +18,9 @@ func _ready():
 				var cardPosition = Vector2( 0, 0)
 				var CardInfo = Global.Card[Global.currentStorageStart+k*4+j]
 				if CardInfo[0] == "Tool":
-					#print( "storage[" , Global.store , "] = " , CardInfo[1] )
 					cardPosition = Vector2( 100+270*j , 59+200*k )
 					CardSize = Vector2(140,140)
 				else:
-					#print( "storage[" , Global.store , "] = " , CardInfo[4] )
 					cardPosition = Vector2( 120+270*j , 59+200*k )
 					CardSize = Vector2(100,140)
 				

@@ -17,25 +17,28 @@ func _on_transition_animation_finished():
 	
 	
 func drawOnce():
-	var randnum = ( randi() + Global.lastrand ) % 100 + 1
+	Global.cards += 1
+	var randnum
 	var i = 0
 	var cardPosition = Vector2( 0, 0)
-	if randnum > Global.Pcard[0]:
-		while randnum > Global.Pcard[i]:
-			i += 1
+	if Global.cards == 50:
+		randnum = randi() % Global.RareCardAmount
+		i = Global.RareCards[randnum]
+		Global.cards = 0
+	else:
+		randnum = ( randi() + Global.lastrand ) % 10000 + 1
+		if randnum > Global.Pcard[0]:
+			while randnum > Global.Pcard[i]:
+				i += 1
+	
 	Global.storage[i] += 1
 	var CardInfo = Global.Card[i]
 	if CardInfo[0] == "Tool":
-		#print( "storage[" , Global.store , "] = " , CardInfo[1] )
 		cardPosition = Vector2(460,190)
 	else:
-		#print( "storage[" , Global.store , "] = " , CardInfo[4] )
 		cardPosition = Vector2(460,150)
-	Global.store += 1
-	#print( "lastrand before = " , Global.lastrand )
+
 	Global.lastrand = randnum
-	#print( "lastrand = " , Global.lastrand )
-	#print( "randnum = " , randnum )
 	Global.currentCard = i
 	
 	cardTemp = Global.CardUnit.instantiate()

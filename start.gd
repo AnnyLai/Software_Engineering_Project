@@ -6,7 +6,6 @@ func _ready():
 	if Global.startGame == 0:
 		Global.storage.resize(100)
 		Global.storage.fill(0)
-		Global.store = 0
 		Global.lastrand = 0
 		Global.startGame = 1
 		Global.currentCard = 0

@@ -1,8 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx7aucfuwmtbs"]
+[gd_scene load_steps=9 format=3 uid="uid://dx7aucfuwmtbs"]
 
 [ext_resource type="Script" path="res://Gacha/CardBase.gd" id="1_gl2aw"]
-[ext_resource type="Texture2D" uid="uid://b5it7inaiwi2o" path="res://png/Character/light.png" id="2_mlle2"]
+[ext_resource type="Texture2D" uid="uid://tlhqhorqu3xq" path="res://png/Character/light1.png" id="2_bnnsh"]
+[ext_resource type="Texture2D" path="res://png/Character/light.png" id="2_mlle2"]
 [ext_resource type="Texture2D" uid="uid://bj6gp4peoeoox" path="res://png/cardborder.png" id="3_k5c0v"]
+[ext_resource type="Texture2D" uid="uid://dmxhsbnmb5gbj" path="res://png/Character/light2.png" id="3_pp1hl"]
+[ext_resource type="Texture2D" uid="uid://w0ws8ktmpu76" path="res://png/Character/light3.png" id="4_ejbwc"]
+[ext_resource type="Texture2D" uid="uid://b4foqpdq7l5dy" path="res://png/Character/light4.png" id="5_7ftdp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5kpmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bnnsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pp1hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ejbwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ftdp")
+}],
+"loop": true,
+"name": &"spark",
+"speed": 5.0
+}]
 
 [node name="CardBase" type="MarginContainer"]
 offset_left = 460.0
@@ -11,7 +35,16 @@ offset_right = 710.0
 offset_bottom = 500.0
 script = ExtResource("1_gl2aw")
 
-[node name="Light" type="Sprite2D" parent="."]
+[node name="Light" type="AnimatedSprite2D" parent="."]
+position = Vector2(-320, -262)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_5kpmt")
+animation = &"spark"
+autoplay = "spark"
+centered = false
+
+[node name="Light1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(115, 180)
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("2_mlle2")

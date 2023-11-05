@@ -1,6 +1,9 @@
 res://Gacha/main.tscn
+res://Gacha/Once.gd
+res://Gacha/TenTimes.gd
 res://bg.tscn
 res://start.tscn
 res://Storage/Storage.tscn
 res://Gacha/CardUnit.tscn
 res://Storage/StorageUnit.tscn
+res://Global.gd

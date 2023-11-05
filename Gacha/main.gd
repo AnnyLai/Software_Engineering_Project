@@ -8,4 +8,4 @@ func _ready():
 	$Once.visible = true
 	$TenTimes.visible = true
 	$Transition.visible = false
-	#$Timer.autostart = false
+
