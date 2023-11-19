@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfwpgb4hpty4a"]
+
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_14ej2"]
+[ext_resource type="Script" path="res://SignUpPage.gd" id="1_ijjgh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lma1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3epov"]
+
+[node name="SignUpPage" type="Node2D"]
+script = ExtResource("1_ijjgh")
+
+[node name="Temp" type="TouchScreenButton" parent="."]
+position = Vector2(1036, 69)
+scale = Vector2(10, 5)
+shape = SubResource("RectangleShape2D_lma1i")
+
+[node name="BG" parent="." instance=ExtResource("1_14ej2")]
+
+[node name="UserId" type="HSplitContainer" parent="."]
+offset_left = 100.0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 310.0
+
+[node name="Label" type="Sprite2D" parent="UserId"]
+
+[node name="InputBox" type="LineEdit" parent="UserId"]
+layout_mode = 2
+
+[node name="Password" type="HSplitContainer" parent="."]
+offset_left = 100.0
+offset_top = 380.0
+offset_right = 500.0
+offset_bottom = 440.0
+
+[node name="Label" type="Sprite2D" parent="Password"]
+
+[node name="InputBox" type="LineEdit" parent="Password"]
+layout_mode = 2
+
+[node name="Email" type="HSplitContainer" parent="."]
+offset_left = 652.0
+offset_top = 250.0
+offset_right = 1052.0
+offset_bottom = 310.0
+
+[node name="Label" type="Sprite2D" parent="Email"]
+
+[node name="InputBox" type="LineEdit" parent="Email"]
+layout_mode = 2
+
+[node name="CofirmPw" type="HSplitContainer" parent="."]
+offset_left = 652.0
+offset_top = 380.0
+offset_right = 1052.0
+offset_bottom = 440.0
+
+[node name="Label" type="Sprite2D" parent="CofirmPw"]
+
+[node name="InputBox" type="LineEdit" parent="CofirmPw"]
+layout_mode = 2
+
+[node name="SignUp" type="TouchScreenButton" parent="."]
+position = Vector2(575, 525)
+scale = Vector2(13, 3)
+shape = SubResource("RectangleShape2D_3epov")
+
+[connection signal="pressed" from="Temp" to="." method="_on_temp_pressed"]

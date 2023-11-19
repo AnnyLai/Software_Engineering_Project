@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx7aucfuwmtbs"]
+[gd_scene load_steps=8 format=3 uid="uid://dx7aucfuwmtbs"]
 
 [ext_resource type="Script" path="res://Gacha/CardUnit.gd" id="1_gl2aw"]
 [ext_resource type="Texture2D" uid="uid://tlhqhorqu3xq" path="res://png/Character/light1.png" id="2_bnnsh"]
-[ext_resource type="Texture2D" path="res://png/Character/light.png" id="2_mlle2"]
 [ext_resource type="Texture2D" uid="uid://bj6gp4peoeoox" path="res://png/cardborder.png" id="3_k5c0v"]
 [ext_resource type="Texture2D" uid="uid://dmxhsbnmb5gbj" path="res://png/Character/light2.png" id="3_pp1hl"]
 [ext_resource type="Texture2D" uid="uid://w0ws8ktmpu76" path="res://png/Character/light3.png" id="4_ejbwc"]
@@ -47,7 +46,6 @@ centered = false
 visible = false
 position = Vector2(115, 180)
 scale = Vector2(0.16, 0.16)
-texture = ExtResource("2_mlle2")
 
 [node name="Card" type="Sprite2D" parent="."]
 centered = false

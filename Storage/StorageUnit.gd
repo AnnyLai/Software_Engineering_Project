@@ -21,6 +21,8 @@ func SetStorage():
 	$Object.texture = load(CardImg)
 	$Object.scale = CardSize / $Object.texture.get_size()
 	$Board.scale = CardSize / $Board.texture.get_size()
+	if Global.storage[Global.currentStorage] > 0:
+		$Object.modulate.RGB.hex = Color(0.195,0.195,0.195)
 	$Object.visible = true
 
 

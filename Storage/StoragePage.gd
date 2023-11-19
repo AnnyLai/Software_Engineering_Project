@@ -8,28 +8,30 @@ var CardSize
 func _ready():
 	storageTemp.resize(12)
 	Global.currentStorage = -1
-	for i in range(6):
-		print( Global.storage[i],',' )
+	#for i in range(6):
+		#print( Global.storage[i],',' )
 	
 	for k in range(3):
 		for j in range(4):
 			Global.currentStorage += 1
-			if Global.storage[Global.currentStorageStart+k*4+j] > 0:
-				var cardPosition = Vector2( 0, 0)
-				var CardInfo = Global.Card[Global.currentStorageStart+k*4+j]
-				if CardInfo[0] == "Tool":
-					cardPosition = Vector2( 100+270*j , 59+200*k )
-					CardSize = Vector2(140,140)
-				else:
-					cardPosition = Vector2( 120+270*j , 59+200*k )
-					CardSize = Vector2(100,140)
-				
-				storageTemp[k*4+j] = StorageUnit.instantiate()
-				storageTemp[k*4+j].position = cardPosition
-				storageTemp[k*4+j].visible = false
-				storageTemp[k*4+j].scale *= CardSize / storageTemp[k*4+j].size
-				$Object.add_child(storageTemp[k*4+j])
-				storageTemp[k*4+j].visible = true
+			if Global.currentStorage == Global.CardAmount:
+				break
+			#if Global.storage[Global.currentStorageStart+k*4+j] > 0:
+			var cardPosition = Vector2( 0, 0)
+			var CardInfo = Global.Card[Global.currentStorageStart+k*4+j]
+			if CardInfo[0] == "Tool":
+				cardPosition = Vector2( 100+270*j , 59+200*k )
+				CardSize = Vector2(140,140)
+			else:
+				cardPosition = Vector2( 120+270*j , 59+200*k )
+				CardSize = Vector2(100,140)
+			
+			storageTemp[k*4+j] = StorageUnit.instantiate()
+			storageTemp[k*4+j].position = cardPosition
+			storageTemp[k*4+j].visible = false
+			storageTemp[k*4+j].scale *= CardSize / storageTemp[k*4+j].size
+			$Object.add_child(storageTemp[k*4+j])
+			storageTemp[k*4+j].visible = true
 				
 	if Global.storage[Global.currentStorageStart] > 0:
 		$Frame/Frame1/Amount.text = str(Global.storage[Global.currentStorageStart])

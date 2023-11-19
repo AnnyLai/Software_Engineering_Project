@@ -13,3 +13,11 @@ func _process(delta):
 
 func _on_next_pressed():
 	get_tree().change_scene_to_file("res://MainPage.tscn")
+
+
+func _on_sign_up_pressed():
+	get_tree().change_scene_to_file("res://SignUpPage.tscn")
+
+
+func _on_forgotten_password_pressed():
+	get_tree().change_scene_to_file("res://ForgottenPwPage.tscn")

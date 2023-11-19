@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://djpbjvuf5yxp1"]
+
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_0170e"]
+[ext_resource type="Script" path="res://ForgottenPwPage.gd" id="1_lkdm6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7grp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmo7s"]
+
+[node name="ForgottenPwPage" type="Node2D"]
+script = ExtResource("1_lkdm6")
+
+[node name="Temp" type="TouchScreenButton" parent="."]
+position = Vector2(575, 325)
+scale = Vector2(60, 35)
+shape = SubResource("RectangleShape2D_y7grp")
+
+[node name="BG" parent="." instance=ExtResource("1_0170e")]
+
+[node name="ResetPwLabel" type="Sprite2D" parent="."]
+position = Vector2(425, 125)
+
+[node name="Directions" type="Sprite2D" parent="."]
+position = Vector2(425, 250)
+
+[node name="UserName" type="HSplitContainer" parent="."]
+offset_left = 376.0
+offset_top = 390.0
+offset_right = 776.0
+offset_bottom = 450.0
+
+[node name="Label" type="Sprite2D" parent="UserName"]
+position = Vector2(376, 400)
+
+[node name="InputBox" type="LineEdit" parent="UserName"]
+layout_mode = 2
+
+[node name="Email" type="HSplitContainer" parent="."]
+offset_left = 376.0
+offset_top = 465.0
+offset_right = 776.0
+offset_bottom = 525.0
+
+[node name="Label" type="Sprite2D" parent="Email"]
+position = Vector2(376, 400)
+
+[node name="InputBox" type="LineEdit" parent="Email"]
+layout_mode = 2
+
+[node name="Send" type="TouchScreenButton" parent="."]
+position = Vector2(575, 570)
+scale = Vector2(10, 3)
+shape = SubResource("RectangleShape2D_fmo7s")
+
+[connection signal="pressed" from="Temp" to="." method="_on_temp_pressed"]

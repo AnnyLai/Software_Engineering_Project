@@ -1,7 +1,7 @@
 extends Node
 
 var startGame = 0
-var CardAmount = 6
+var CardAmount = 10
 var storage = []
 var cards = 0
 var lastrand = 0
