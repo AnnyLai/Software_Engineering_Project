@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqtrs1ynclm0d"]
+
+[ext_resource type="Script" path="res://StartPage.gd" id="1_aksqk"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_llfno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoxcc"]
+
+[node name="StartPage" type="Node2D"]
+script = ExtResource("1_aksqk")
+
+[node name="BG" parent="." instance=ExtResource("1_llfno")]
+
+[node name="Start" type="TouchScreenButton" parent="."]
+position = Vector2(575, 325)
+scale = Vector2(60, 35)
+shape = SubResource("RectangleShape2D_hoxcc")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

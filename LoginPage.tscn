@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyhqkmqbamye2"]
+
+[ext_resource type="Script" path="res://LoginPage.gd" id="1_r4ltg"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="2_7yupd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iigvd"]
+
+[node name="LoginPage" type="Node2D"]
+script = ExtResource("1_r4ltg")
+
+[node name="Next" type="TouchScreenButton" parent="."]
+position = Vector2(575, 325)
+scale = Vector2(60, 35)
+shape = SubResource("RectangleShape2D_iigvd")
+
+[node name="BG" parent="." instance=ExtResource("2_7yupd")]
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

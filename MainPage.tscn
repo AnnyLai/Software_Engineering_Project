@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmooqripkn2pq"]
+
+[ext_resource type="Script" path="res://MainPage.gd" id="1_2c2q0"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="2_hjpnk"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_kjltk"]
+
+[node name="MainPage" type="Node2D"]
+position = Vector2(585, 362)
+script = ExtResource("1_2c2q0")
+
+[node name="BG" parent="." instance=ExtResource("2_hjpnk")]
+
+[node name="Gatcha" type="Button" parent="."]
+top_level = true
+use_parent_material = true
+offset_left = 310.0
+offset_top = 360.0
+offset_right = 455.0
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 40
+text = "抽卡"
+icon = SubResource("ImageTexture_kjltk")
+
+[node name="Storage" type="Button" parent="."]
+top_level = true
+use_parent_material = true
+offset_left = 710.0
+offset_top = 360.0
+offset_right = 855.0
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 40
+text = "倉庫"
+icon = SubResource("ImageTexture_kjltk")
+
+[connection signal="pressed" from="Gatcha" to="." method="_on_draw_pressed"]
+[connection signal="pressed" from="Storage" to="." method="_on_storage_pressed"]
