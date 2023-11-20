@@ -27,7 +27,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CardBase" type="MarginContainer"]
+[node name="CardUnit" type="MarginContainer"]
 offset_left = 460.0
 offset_top = 150.0
 offset_right = 710.0

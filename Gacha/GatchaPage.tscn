@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://dygmdff7w6ism"]
+[gd_scene load_steps=26 format=3 uid="uid://dygmdff7w6ism"]
 
 [ext_resource type="Script" path="res://Gacha/GatchaPage.gd" id="1_dkfca"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="2_hyun0"]
 [ext_resource type="Script" path="res://Gacha/Once.gd" id="4_gy2qh"]
 [ext_resource type="Script" path="res://Gacha/TenTimes.gd" id="5_5w7ei"]
 [ext_resource type="Texture2D" uid="uid://dhcfisoiwimpc" path="res://png/player.png" id="6_cmakj"]
+[ext_resource type="PackedScene" uid="uid://dx7aucfuwmtbs" path="res://Gacha/CardUnit.tscn" id="6_icvwb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhohn"]
 atlas = ExtResource("6_cmakj")
@@ -145,20 +146,38 @@ script = ExtResource("1_dkfca")
 
 [node name="BG" parent="." instance=ExtResource("2_hyun0")]
 
+[node name="CardSample" parent="." instance=ExtResource("6_icvwb")]
+offset_top = 90.0
+offset_bottom = 440.0
+
+[node name="Timer" type="Timer" parent="CardSample"]
+wait_time = 3.0
+autostart = true
+
+[node name="Possibility" type="Label" parent="."]
+offset_left = 518.0
+offset_top = 399.0
+offset_right = 618.0
+offset_bottom = 439.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
 [node name="Once" type="Button" parent="."]
 offset_left = 275.0
-offset_top = 350.0
+offset_top = 470.0
 offset_right = 425.0
-offset_bottom = 440.0
+offset_bottom = 560.0
 theme_override_font_sizes/font_size = 25
 text = "抽 1 次"
 script = ExtResource("4_gy2qh")
 
 [node name="TenTimes" type="Button" parent="."]
 offset_left = 727.0
-offset_top = 350.0
+offset_top = 470.0
 offset_right = 877.0
-offset_bottom = 440.0
+offset_bottom = 560.0
 theme_override_font_sizes/font_size = 25
 text = "抽 10 次"
 script = ExtResource("5_5w7ei")
@@ -190,6 +209,7 @@ sprite_frames = SubResource("SpriteFrames_msgko")
 animation = &"transition"
 autoplay = "transition"
 
+[connection signal="timeout" from="CardSample/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Once" to="Once" method="_on_pressed"]
 [connection signal="pressed" from="TenTimes" to="TenTimes" method="_on_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -38,6 +38,8 @@ offset_bottom = 440.0
 
 [node name="InputBox" type="LineEdit" parent="Password"]
 layout_mode = 2
+secret = true
+secret_character = "*"
 
 [node name="Email" type="HSplitContainer" parent="."]
 offset_left = 652.0
@@ -60,10 +62,17 @@ offset_bottom = 440.0
 
 [node name="InputBox" type="LineEdit" parent="CofirmPw"]
 layout_mode = 2
+secret = true
+secret_character = "*"
 
 [node name="SignUp" type="TouchScreenButton" parent="."]
 position = Vector2(575, 525)
 scale = Vector2(13, 3)
 shape = SubResource("RectangleShape2D_3epov")
 
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(475, 525, 677, 525)
+default_color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="Temp" to="." method="_on_temp_pressed"]
+[connection signal="pressed" from="SignUp" to="." method="_on_sign_up_pressed"]

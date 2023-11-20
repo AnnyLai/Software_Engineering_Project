@@ -2,10 +2,14 @@ extends Button
 
 var cardTemp
 var press = 0
+var CardInfo
 
 func _on_pressed():
 	get_node(".").visible = false
 	$"../TenTimes".visible = false
+	$"../CardSample".visible = false
+	$"../Possibility".visible = false
+	$"../CardSample/Timer".stop()
 	$"../Transition".visible = true	
 	$"../Transition".play("transition")
 	press = 1
@@ -58,6 +62,22 @@ func _on_continue_pressed():
 	get_node(".").visible = true
 	$"../Continue".visible = false
 	$"../Back".visible = true
+	$"../CardSample".visible = true
+	$"../Possibility".visible = true
+	Global.currentCard = Global.CardAmount - 1
+	CardInfo = Global.Card[Global.currentCard]
+	if CardInfo[0] == "Tool":
+		$"../CardSample".position = Vector2(455,100)
+		$"../CardSample".size = Vector2(225,225)
+		$"../Possibility".position = Vector2(535,375)
+	else:
+		$"../CardSample".position = Vector2(455,80)
+		$"../CardSample".size = Vector2(225,315)
+		$"../Possibility".position = Vector2(535,445)
+	$"../CardSample".visible = true
+	$"../Possibility".text = str(float(Global.Pcard[Global.currentCard]-Global.Pcard[Global.currentCard-1])*1000.0/Global.Pcard[Global.CardAmount-1])+"‰"
+	print($"../Possibility".text)
+	$"../CardSample/Timer".start()
 
 
 

@@ -7,6 +7,9 @@ var press = 0
 func _on_pressed():
 	get_node(".").visible = false
 	$"../Once".visible = false
+	$"../CardSample".visible = false
+	$"../Possibility".visible = false
+	$"../CardSample/Timer".stop()
 	$"../Transition".visible = true	
 	$"../Transition".play("transition")
 	press = 1
@@ -64,6 +67,7 @@ func _on_continue_pressed():
 			cardTemp[i].queue_free()
 		press = 0
 	get_node(".").visible = true
+	
 
 
 

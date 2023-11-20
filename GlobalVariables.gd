@@ -40,4 +40,4 @@ var Card = {
 	
 var RareCards = [Guardian, Mercenary, Spearman, Warrior, Knight, Archer, Footman, Mentor, SquadLeader]
 var RareCardAmount = 9
-var Pcard = [10, 20, 30, 40, 50, 60, 70, 80, 90, 10000]
+var Pcard = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 10000]

@@ -16,6 +16,7 @@ func SetCard():
 		CardImg = str( "res://png/" , CardInfo[0] , "/" , CardInfo[1] , ".png" )
 		get_node(".").size.x = 250
 		get_node(".").size.y = 250
+		$Light.visible = false
 	else:
 		CardImg = str( "res://png/" , CardInfo[0] , "/" , CardInfo[4] , ".png" )
 		get_node(".").size.x = 250
