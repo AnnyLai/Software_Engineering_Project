@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqtrs1ynclm0d"]
+[gd_scene load_steps=7 format=3 uid="uid://cqtrs1ynclm0d"]
 
 [ext_resource type="Script" path="res://StartPage.gd" id="1_aksqk"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_llfno"]
+[ext_resource type="Texture2D" uid="uid://b4kihrq7mv6sk" path="res://png/StartPage/logo-05.png" id="3_eeh0u"]
+[ext_resource type="Texture2D" uid="uid://cfeq84c2bhh53" path="res://png/StartPage/起始畫面.png" id="4_iqffs"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="5_hktrd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hoxcc"]
 
@@ -11,8 +14,28 @@ script = ExtResource("1_aksqk")
 [node name="BG" parent="." instance=ExtResource("1_llfno")]
 
 [node name="Start" type="TouchScreenButton" parent="."]
-position = Vector2(575, 325)
-scale = Vector2(60, 35)
+position = Vector2(575, 267)
+scale = Vector2(60, 30)
 shape = SubResource("RectangleShape2D_hoxcc")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(575, 120)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_eeh0u")
+
+[node name="Pic" type="Sprite2D" parent="."]
+position = Vector2(579, 267)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_iqffs")
+
+[node name="Tip" type="Label" parent="."]
+offset_left = 225.0
+offset_top = 455.0
+offset_right = 925.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("5_hktrd")
+theme_override_font_sizes/font_size = 28
+text = "PRESS ANYWHERE TO START"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

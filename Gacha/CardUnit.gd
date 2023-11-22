@@ -9,7 +9,7 @@ func _on_visibility_changed():
 
 func SetCard():
 	var CardInfo = Global.Card[Global.currentCard]
-
+	Global.cardsizeUnit = 50
 	#string of path to png file
 	var CardImg
 	if CardInfo[0] == "Tool":

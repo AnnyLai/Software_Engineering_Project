@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://dygmdff7w6ism"]
+[gd_scene load_steps=28 format=3 uid="uid://dygmdff7w6ism"]
 
 [ext_resource type="Script" path="res://Gacha/GatchaPage.gd" id="1_dkfca"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="2_hyun0"]
 [ext_resource type="Script" path="res://Gacha/Once.gd" id="4_gy2qh"]
 [ext_resource type="Script" path="res://Gacha/TenTimes.gd" id="5_5w7ei"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="5_kmjrm"]
 [ext_resource type="Texture2D" uid="uid://dhcfisoiwimpc" path="res://png/player.png" id="6_cmakj"]
 [ext_resource type="PackedScene" uid="uid://dx7aucfuwmtbs" path="res://Gacha/CardUnit.tscn" id="6_icvwb"]
 
@@ -141,6 +142,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akrvt"]
+
 [node name="GatchaPage" type="Node2D"]
 script = ExtResource("1_dkfca")
 
@@ -151,7 +154,7 @@ offset_top = 90.0
 offset_bottom = 440.0
 
 [node name="Timer" type="Timer" parent="CardSample"]
-wait_time = 3.0
+wait_time = 2.0
 autostart = true
 
 [node name="Possibility" type="Label" parent="."]
@@ -164,56 +167,76 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 
-[node name="Once" type="Button" parent="."]
-offset_left = 275.0
-offset_top = 470.0
-offset_right = 425.0
-offset_bottom = 560.0
-theme_override_font_sizes/font_size = 25
-text = "抽 1 次"
-script = ExtResource("4_gy2qh")
-
-[node name="TenTimes" type="Button" parent="."]
-offset_left = 727.0
-offset_top = 470.0
-offset_right = 877.0
-offset_bottom = 560.0
-theme_override_font_sizes/font_size = 25
-text = "抽 10 次"
-script = ExtResource("5_5w7ei")
-
 [node name="Cards" type="Node2D" parent="."]
 
 [node name="Back" type="Button" parent="."]
-offset_left = 1017.0
-offset_top = 26.0
-offset_right = 1128.0
-offset_bottom = 97.0
+offset_left = 1010.0
+offset_top = 15.0
+offset_right = 1135.0
+offset_bottom = 100.0
 theme_override_font_sizes/font_size = 30
 text = "Back
 "
 
 [node name="Continue" type="Button" parent="."]
 show_behind_parent = true
-offset_left = 1011.0
-offset_top = 19.0
-offset_right = 1136.0
-offset_bottom = 104.0
+offset_left = 1010.0
+offset_top = 15.0
+offset_right = 1135.0
+offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Continue"
 
 [node name="Transition" type="AnimatedSprite2D" parent="."]
-position = Vector2(582, 364)
-scale = Vector2(4.62879, 3.8125)
+position = Vector2(582, 330)
+scale = Vector2(4.5, 3.707)
 sprite_frames = SubResource("SpriteFrames_msgko")
 animation = &"transition"
 autoplay = "transition"
 
+[node name="Once" type="MarginContainer" parent="."]
+offset_left = 309.0
+offset_top = 435.0
+offset_right = 409.0
+offset_bottom = 485.0
+
+[node name="OnceLabel" type="Label" parent="Once"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("5_kmjrm")
+theme_override_font_sizes/font_size = 20
+text = "抽 1 次"
+
+[node name="Once" type="TouchScreenButton" parent="Once"]
+position = Vector2(41, 24)
+scale = Vector2(6, 4)
+shape = SubResource("RectangleShape2D_akrvt")
+script = ExtResource("4_gy2qh")
+
+[node name="TenTimes" type="MarginContainer" parent="."]
+offset_left = 750.0
+offset_top = 435.0
+offset_right = 855.0
+offset_bottom = 485.0
+
+[node name="TenTimesLabel" type="Label" parent="TenTimes"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("5_kmjrm")
+theme_override_font_sizes/font_size = 20
+text = "抽 10 次"
+
+[node name="TenTimes" type="TouchScreenButton" parent="TenTimes"]
+position = Vector2(52, 25)
+scale = Vector2(6, 4)
+shape = SubResource("RectangleShape2D_akrvt")
+script = ExtResource("5_5w7ei")
+
 [connection signal="timeout" from="CardSample/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="Once" to="Once" method="_on_pressed"]
-[connection signal="pressed" from="TenTimes" to="TenTimes" method="_on_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Continue" to="Once" method="_on_continue_pressed"]
-[connection signal="pressed" from="Continue" to="TenTimes" method="_on_continue_pressed"]
-[connection signal="animation_finished" from="Transition" to="Once" method="_on_transition_animation_finished"]
-[connection signal="animation_finished" from="Transition" to="TenTimes" method="_on_transition_animation_finished"]
+[connection signal="pressed" from="Continue" to="Once/Once" method="_on_continue_pressed"]
+[connection signal="pressed" from="Continue" to="TenTimes/TenTimes" method="_on_continue_pressed"]
+[connection signal="animation_finished" from="Transition" to="Once/Once" method="_on_transition_animation_finished"]
+[connection signal="animation_finished" from="Transition" to="TenTimes/TenTimes" method="_on_transition_animation_finished"]
+[connection signal="pressed" from="Once/Once" to="Once/Once" method="_on_pressed"]
+[connection signal="pressed" from="TenTimes/TenTimes" to="TenTimes/TenTimes" method="_on_pressed"]

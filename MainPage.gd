@@ -13,12 +13,25 @@ func _ready():
 		Global.currentStorageStart = 0
 
 
-
-func _on_draw_pressed():
-	get_tree().change_scene_to_file("res://Gacha/GatchaPage.tscn")
-
-
 func _on_storage_pressed():
 	get_tree().change_scene_to_file("res://Storage/StoragePage.tscn")
 
 
+func _on_gatcha_pressed():
+	get_tree().change_scene_to_file("res://Gacha/GatchaPage.tscn")
+
+
+func _on_new_room_pressed():
+	get_tree().change_scene_to_file("res://NewRoom.tscn")
+
+
+func _on_quick_match_pressed():
+	get_tree().change_scene_to_file("res://QuickMatch.tscn")
+
+
+func _on_coin_and_gem_pressed():
+	get_tree().change_scene_to_file("res://TopUp.tscn")
+
+
+func _on_character_pressed():
+	get_tree().change_scene_to_file("res://CharacterPage.tscn")

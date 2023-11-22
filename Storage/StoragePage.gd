@@ -6,32 +6,33 @@ var CardSize
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	storageTemp.resize(12)
+	storageTemp.resize(10)
 	Global.currentStorage = -1
 	#for i in range(6):
 		#print( Global.storage[i],',' )
 	
-	for k in range(3):
-		for j in range(4):
+	for k in range(2):
+		for j in range(5):
+			Global.cardsizeUnit = 18
 			Global.currentStorage += 1
 			if Global.currentStorage == Global.CardAmount:
 				break
-			#if Global.storage[Global.currentStorageStart+k*4+j] > 0:
+			#if Global.storage[Global.currentStorageStart+k*5+j] > 0:
 			var cardPosition = Vector2( 0, 0)
-			var CardInfo = Global.Card[Global.currentStorageStart+k*4+j]
+			var CardInfo = Global.Card[Global.currentStorageStart+k*5+j]
 			if CardInfo[0] == "Tool":
-				cardPosition = Vector2( 100+270*j , 59+200*k )
-				CardSize = Vector2(140,140)
+				cardPosition = Vector2( 104+205*j , 110+200*k )
+				CardSize = Vector2(Global.cardsizeUnit*7,Global.cardsizeUnit*7)
 			else:
-				cardPosition = Vector2( 120+270*j , 59+200*k )
-				CardSize = Vector2(100,140)
+				cardPosition = Vector2( 122+205*j , 110+200*k )
+				CardSize = Vector2(Global.cardsizeUnit*5,Global.cardsizeUnit*7)
 			
-			storageTemp[k*4+j] = StorageUnit.instantiate()
-			storageTemp[k*4+j].position = cardPosition
-			storageTemp[k*4+j].visible = false
-			storageTemp[k*4+j].scale *= CardSize / storageTemp[k*4+j].size
-			$Object.add_child(storageTemp[k*4+j])
-			storageTemp[k*4+j].visible = true
+			storageTemp[k*5+j] = StorageUnit.instantiate()
+			storageTemp[k*5+j].position = cardPosition
+			storageTemp[k*5+j].visible = false
+			storageTemp[k*5+j].scale *= CardSize / storageTemp[k*5+j].size
+			$Object.add_child(storageTemp[k*5+j])
+			storageTemp[k*5+j].visible = true
 				
 	if Global.storage[Global.currentStorageStart] > 0:
 		$Frame/Frame1/Amount.text = str(Global.storage[Global.currentStorageStart])
@@ -53,15 +54,11 @@ func _ready():
 		$Frame/Frame9/Amount.text = str(Global.storage[Global.currentStorageStart+8])
 	if Global.storage[Global.currentStorageStart+9] > 0:
 		$Frame/Frame10/Amount.text = str(Global.storage[Global.currentStorageStart+9])
-	if Global.storage[Global.currentStorageStart+10] > 0:
-		$Frame/Frame11/Amount.text = str(Global.storage[Global.currentStorageStart+10])
-	if Global.storage[Global.currentStorageStart+11] > 0:
-		$Frame/Frame12/Amount.text = str(Global.storage[Global.currentStorageStart+11])
 
 
 
 func _on_back_pressed():
-	for i in range(12):
+	for i in range(10):
 		if storageTemp[i]:
 			storageTemp[i].queue_free()
 	get_tree().change_scene_to_file("res://MainPage.tscn")

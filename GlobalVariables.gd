@@ -8,6 +8,7 @@ var lastrand = 0
 var currentCard = 0
 var currentStorage = 0
 var currentStorageStart = 0
+var cardsizeUnit = 0
 
 var CardUnit = preload("res://Gacha/CardUnit.tscn")
 

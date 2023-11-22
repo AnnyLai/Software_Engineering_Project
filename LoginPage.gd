@@ -14,6 +14,7 @@ func _on_log_in_pressed():
 		password = $InputBox/Password.text
 		print( "userID = " , userID )
 		print( "password = " , password )
+		get_tree().change_scene_to_file("res://MainPage.tscn")
 	else:
 		print( "not yet finished" )
 

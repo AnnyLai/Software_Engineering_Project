@@ -1,4 +1,4 @@
-extends Button
+extends TouchScreenButton
 
 var cardTemp = []
 var CardSize
@@ -6,28 +6,34 @@ var press = 0
 
 func _on_pressed():
 	get_node(".").visible = false
-	$"../Once".visible = false
-	$"../CardSample".visible = false
-	$"../Possibility".visible = false
-	$"../CardSample/Timer".stop()
-	$"../Transition".visible = true	
-	$"../Transition".play("transition")
+	$"../TenTimesLabel".visible = false
+	$"../../Once/Once".visible = false
+	$"../../Once/OnceLabel".visible = false
+	$"../../CardSample".visible = false
+	$"../../Possibility".visible = false
+	$"../../CardSample/Timer".stop()
+	$"../../Transition".visible = true
+	$"../../Transition".play("transition")
 	press = 1
+	#print(300)
 	
 func _on_transition_animation_finished():
 	if press == 1:
-		$"../Transition".visible = false
+		$"../../Transition".visible = false
 		drawTenTimes()
+		#print(500)
 	
 
 func drawTenTimes():
 	cardTemp.resize(10)
-	$"../Continue".visible = true
-	$"../Once".visible = false
-	$"../Back".visible = false
+	$"../../Continue".visible = true
+	$"../../Once/OnceLabel".visible = false
+	$"../../Once/Once".visible = false
+	$"../../Back".visible = false
 	
 	for k in range(2):
 		for j in range(5):
+			Global.cardsizeUnit = 20
 			Global.cards += 1
 			var randnum
 			var i = 0
@@ -45,11 +51,11 @@ func drawTenTimes():
 			Global.storage[i] += 1
 			var CardInfo = Global.Card[i]
 			if CardInfo[0] == "Tool":
-				cardPosition = Vector2(140+190*j , 120+300*k)
-				CardSize = Vector2(100,100)
+				cardPosition = Vector2(140+190*j , 100+1+230*k)
+				CardSize = Vector2(Global.cardsizeUnit*5,Global.cardsizeUnit*5)
 			else:
-				cardPosition = Vector2(140+190*j , 100+300*k)
-				CardSize = Vector2(100,140)
+				cardPosition = Vector2(140+190*j , 80+230*k)
+				CardSize = Vector2(Global.cardsizeUnit*5,Global.cardsizeUnit*7)
 			Global.lastrand = randnum
 			Global.currentCard = i
 	
@@ -57,7 +63,7 @@ func drawTenTimes():
 			cardTemp[k*5+j].position = cardPosition
 			cardTemp[k*5+j].visible = false
 			cardTemp[k*5+j].scale *= CardSize / cardTemp[k*5+j].size
-			$"../Cards".add_child(cardTemp[k*5+j])
+			$"../../Cards".add_child(cardTemp[k*5+j])
 			cardTemp[k*5+j].visible = true
 
 
@@ -67,7 +73,7 @@ func _on_continue_pressed():
 			cardTemp[i].queue_free()
 		press = 0
 	get_node(".").visible = true
-	
+	$"../TenTimesLabel".visible = true
 
 
 
