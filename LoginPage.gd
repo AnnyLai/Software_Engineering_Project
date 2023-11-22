@@ -1,7 +1,6 @@
 extends Node2D
 
-var userID = ""
-var password = ""
+#var url: String = "https://127.0.0.1:5000/"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,10 +9,17 @@ func _ready():
 
 func _on_log_in_pressed():
 	if $InputBox/UserID.text != "" and $InputBox/Password.text != "":
-		userID = $InputBox/UserID.text
-		password = $InputBox/Password.text
-		print( "userID = " , userID )
-		print( "password = " , password )
+		Global.login_args["username"] = $InputBox/UserID.text
+		Global.login_args["password"] = $InputBox/Password.text
+		print( "userID = " , Global.login_args["username"] )
+		print( "password = " , Global.login_args["password"] )
+		
+		var newcall = load("res://CallRequest.tscn")
+		var new = newcall.instantiate()
+		add_child(new)
+		#var client = Global.http_client.instantiate()
+		#add_child(client)
+		#client.HttpRequest(Global.url)
 		get_tree().change_scene_to_file("res://MainPage.tscn")
 	else:
 		print( "not yet finished" )

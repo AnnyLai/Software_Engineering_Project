@@ -1,7 +1,5 @@
 extends Node2D
 
-var userID = ""
-var email = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,11 +16,15 @@ func _on_temp_pressed():
 
 
 func _on_send_pressed():
-	if $InputBox/UserID.text != "" and $InputBox/Email.text != "":
-		userID = $InputBox/UserID.text
-		email = $InputBox/Email.text
-		print( "userID = " , userID )
-		print( "email = " , email )
+	if $Whole/InputBox/UserID.text != "" and $Whole/InputBox/Email.text != "":
+		Global.forgot_args["username"] = $Whole/InputBox/UserID.text
+		Global.forgot_args["email"] = $Whole/InputBox/Email.text
+		print( "userID = " , Global.forgot_args["username"] )
+		print( "email = " , Global.forgot_args["email"] )
+		#var newcall = load("res://CallRequest.tscn")
+		#var new = newcall.instantiate()
+		#add_child(new)
+		get_tree().change_scene_to_file("res://LoginPage.tscn")
 	else:
 		print( "not yet finished" )
 

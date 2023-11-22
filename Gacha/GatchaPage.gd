@@ -54,3 +54,5 @@ func _on_timer_timeout():
 		$Possibility.text = str(float(Global.Pcard[Global.currentCard]-Global.Pcard[Global.currentCard-1])*1000.0/Global.Pcard[Global.CardAmount-1])+"‰"
 		#print( float(Global.Pcard[Global.currentCard]-Global.Pcard[Global.currentCard-1]) )
 	print($Possibility.text)
+
+

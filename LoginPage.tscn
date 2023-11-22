@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyhqkmqbamye2"]
+[gd_scene load_steps=11 format=3 uid="uid://cyhqkmqbamye2"]
 
 [ext_resource type="Script" path="res://LoginPage.gd" id="1_r4ltg"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="2_7yupd"]
 [ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="3_0gjqo"]
 [ext_resource type="Texture2D" uid="uid://b4kihrq7mv6sk" path="res://png/StartPage/logo-05.png" id="3_3owdf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iigvd"]
 
 [sub_resource type="SystemFont" id="SystemFont_0o5s8"]
 font_names = PackedStringArray("Constantia")
@@ -24,11 +22,6 @@ font_names = PackedStringArray("Constantia")
 [node name="LoginPage" type="Node2D"]
 script = ExtResource("1_r4ltg")
 
-[node name="Temp" type="TouchScreenButton" parent="."]
-position = Vector2(1040, 65)
-scale = Vector2(10, 5)
-shape = SubResource("RectangleShape2D_iigvd")
-
 [node name="BG" parent="." instance=ExtResource("2_7yupd")]
 
 [node name="Logo" type="Sprite2D" parent="."]
@@ -38,17 +31,16 @@ texture = ExtResource("3_3owdf")
 [node name="Labels" type="VSplitContainer" parent="."]
 offset_left = 331.0
 offset_top = 187.0
-offset_right = 445.0
-offset_bottom = 237.0
-scale = Vector2(2, 2)
-size_flags_horizontal = 3
-size_flags_vertical = 3
+offset_right = 531.0
+offset_bottom = 302.0
+theme_override_constants/separation = 25
+split_offset = 45
 
 [node name="UserID" type="Label" parent="Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_0gjqo")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 30
 text = "User ID"
 vertical_alignment = 2
 
@@ -56,18 +48,19 @@ vertical_alignment = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_0gjqo")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 30
 text = "PASSWORD"
 vertical_alignment = 2
 
 [node name="InputBox" type="VSplitContainer" parent="."]
 offset_left = 573.0
 offset_top = 184.0
-offset_right = 733.0
-offset_bottom = 254.0
-scale = Vector2(1.5, 1.5)
+offset_right = 823.0
+offset_bottom = 299.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.5
+theme_override_constants/separation = 25
+split_offset = 45
 
 [node name="UserID" type="LineEdit" parent="InputBox"]
 layout_mode = 2
@@ -154,7 +147,6 @@ position = Vector2(214, 14)
 scale = Vector2(22, 1.8)
 shape = SubResource("RectangleShape2D_qllus")
 
-[connection signal="pressed" from="Temp" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="LogIn/LogIn" to="." method="_on_log_in_pressed"]
 [connection signal="pressed" from="HBoxContainer/SignUp/SignUp" to="." method="_on_sign_up_pressed"]
 [connection signal="pressed" from="ForgottenPassword/ForgottenPassword" to="." method="_on_forgotten_password_pressed"]

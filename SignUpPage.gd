@@ -1,9 +1,5 @@
 extends Node2D
 
-var userID = ""
-var email = ""
-var password = ""
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -19,12 +15,16 @@ func _on_temp_pressed():
 
 
 func _on_sign_up_pressed():
-	if $Password/InputBox.text != "" and $Password/InputBox.text == $CofirmPw/InputBox.text and $UserId/InputBox.text != "" and $Email/InputBox.text != "":
-		userID = $UserId/InputBox.text
-		email = $Email/InputBox.text
-		password = $Password/InputBox.text
-		print( "userID = " , userID )
-		print( "email = " , email )
-		print( "password = " , password )
+	if $Whole/Left/InputBoxes/PasswordInputBox.text != "" and $Whole/Left/InputBoxes/PasswordInputBox.text == $Whole/Right/InputBoxes/ConfirmPwInputBox.text and $Whole/Left/InputBoxes/UserIdInputBox.text != "" and $Whole/Right/InputBoxes/EmailInputBox.text != "":
+		Global.register_args["username"] = $Whole/Left/InputBoxes/UserIdInputBox.text
+		Global.register_args["email"] = $Whole/Right/InputBoxes/EmailInputBox.text
+		Global.register_args["password"] = $Whole/Left/InputBoxes/PasswordInputBox.text
+		print( "userID = " , Global.register_args["username"] )
+		print( "email = " , Global.register_args["email"] )
+		print( "password = " , Global.register_args["password"] )
+		#var newcall = load("res://CallRequest.tscn")
+		#var new = newcall.instantiate()
+		#add_child(new)
+		get_tree().change_scene_to_file("res://LoginPage.tscn")
 	else:
 		print( "not yet finished" )

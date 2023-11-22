@@ -11,6 +11,16 @@ func _ready():
 		Global.currentCard = 0
 		Global.currentStorage = 0
 		Global.currentStorageStart = 0
+	$CoinAmount.text = str(Global.CoinAmount)
+	$GemAmount.text = str(Global.GemAmount)
+	$Name.text = Global.register_args["nickname"]
+	$PlayerID.text = "ID: " + Global.PlayerID
+	
+func _process(delta):
+	$CoinAmount.text = str(Global.CoinAmount)
+	$GemAmount.text = str(Global.GemAmount)
+	$Name.text = Global.register_args["nickname"]
+	$PlayerID.text = "ID: " + Global.PlayerID
 
 
 func _on_storage_pressed():
@@ -30,8 +40,10 @@ func _on_quick_match_pressed():
 
 
 func _on_coin_and_gem_pressed():
-	get_tree().change_scene_to_file("res://TopUp.tscn")
+	get_tree().change_scene_to_file("res://TopUpPage.tscn")
 
 
 func _on_character_pressed():
 	get_tree().change_scene_to_file("res://CharacterPage.tscn")
+
+
