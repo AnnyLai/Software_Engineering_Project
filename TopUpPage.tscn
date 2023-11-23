@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw5oqvrejpg8p"]
+
+[ext_resource type="Script" path="res://TopUpPage.gd" id="1_dhtay"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_lqarc"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="3_oquog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yotp"]
+
+[node name="TopUpPage" type="Node2D"]
+script = ExtResource("1_dhtay")
+
+[node name="BG" parent="." instance=ExtResource("1_lqarc")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 361.0
+offset_top = 243.0
+offset_right = 791.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_oquog")
+theme_override_font_sizes/font_size = 50
+text = "Upgrading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="MarginContainer" parent="."]
+offset_left = 518.0
+offset_top = 425.0
+offset_right = 634.0
+offset_bottom = 460.0
+
+[node name="BackLabel" type="Label" parent="Back"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_oquog")
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TouchScreenButton" parent="Back"]
+position = Vector2(58, 15)
+scale = Vector2(6.5, 2)
+shape = SubResource("RectangleShape2D_0yotp")
+
+[connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]

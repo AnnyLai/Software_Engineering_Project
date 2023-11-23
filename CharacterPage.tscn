@@ -1,0 +1,144 @@
+[gd_scene load_steps=9 format=3 uid="uid://6rj84rtqvylj"]
+
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_ni0ma"]
+[ext_resource type="Script" path="res://CharacterPage.gd" id="1_xhnmh"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="3_jj5k4"]
+[ext_resource type="FontFile" uid="uid://s44dpneaad4g" path="res://png/id字體.ttf" id="4_n1137"]
+[ext_resource type="Texture2D" uid="uid://dsl3ecoy1s3pn" path="res://png/MainScene/錢跟鑽.png" id="5_hy13r"]
+
+[sub_resource type="SystemFont" id="SystemFont_8jkkd"]
+font_names = PackedStringArray("MS UI Gothic")
+
+[sub_resource type="SystemFont" id="SystemFont_gy2hw"]
+font_names = PackedStringArray("Segoe UI Symbol")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug2yh"]
+
+[node name="CharacterPage" type="Node2D"]
+script = ExtResource("1_xhnmh")
+
+[node name="BG" parent="." instance=ExtResource("1_ni0ma")]
+
+[node name="Name" type="Label" parent="."]
+offset_left = 58.0
+offset_top = 38.0
+offset_right = 308.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_font_sizes/font_size = 30
+text = "Player"
+
+[node name="PlayerID" type="Label" parent="."]
+offset_left = 62.0
+offset_top = 82.0
+offset_right = 362.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_n1137")
+theme_override_font_sizes/font_size = 25
+text = "ID: "
+
+[node name="CoinAmount" type="Label" parent="."]
+offset_left = 685.0
+offset_top = 35.0
+offset_right = 845.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_font_sizes/font_size = 30
+text = "1000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GemAmount" type="Label" parent="."]
+offset_left = 940.0
+offset_top = 35.0
+offset_right = 1040.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_font_sizes/font_size = 30
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CoinAndGem" type="TouchScreenButton" parent="."]
+position = Vector2(636, 24)
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("5_hy13r")
+
+[node name="SelectedLabel" type="Label" parent="."]
+offset_left = 75.0
+offset_top = 362.0
+offset_right = 255.0
+offset_bottom = 397.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_font_sizes/font_size = 25
+text = "Selected"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Selected" type="Sprite2D" parent="."]
+position = Vector2(160, 270)
+
+[node name="CharacterName" type="Label" parent="."]
+offset_left = 524.0
+offset_top = 120.0
+offset_right = 930.0
+offset_bottom = 164.0
+theme_override_colors/font_color = Color(0.219501, 0.219501, 0.219501, 1)
+theme_override_fonts/font = SubResource("SystemFont_8jkkd")
+theme_override_font_sizes/font_size = 40
+text = "WAR CORRESPONDENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slogan" type="Label" parent="."]
+offset_left = 560.0
+offset_top = 183.0
+offset_right = 905.0
+offset_bottom = 245.0
+theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
+theme_override_fonts/font = SubResource("SystemFont_gy2hw")
+theme_override_font_sizes/font_size = 20
+text = "\"If your photo wasn't good enough,
+it's because you weren't close enough.\""
+
+[node name="Information" type="Label" parent="."]
+offset_left = 457.0
+offset_top = 274.0
+offset_right = 1040.0
+offset_bottom = 480.0
+theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
+text = "獨家報導                                                       決定性瞬間
+戰地記者如果能夠報導下列事件                 當戰地記者受到攻擊後生命降至50%以下
+並離開島嶼將獲得高額報酬:                        後，大幅提高跑速，半夜後重置
+其他玩家的生平、特殊建築的作用、         
+這座島嶼的歷史                                            戰士之死
+                                                                       當任何玩家在視野範圍內倒下時，
+戰火洗禮                                                        減少戰地記者各項屬性10%直到黎明
+戰地記者能夠熟練地使用槍械。"
+
+[node name="Back" type="MarginContainer" parent="."]
+offset_left = 23.0
+offset_top = 485.0
+offset_right = 139.0
+offset_bottom = 520.0
+
+[node name="BackLabel" type="Label" parent="Back"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TouchScreenButton" parent="Back"]
+position = Vector2(58, 15)
+scale = Vector2(6.5, 2)
+shape = SubResource("RectangleShape2D_ug2yh")
+
+[connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]
