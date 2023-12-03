@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c8kfctqkt4qdk"
-path="res://.godot/imported/04B_30__.TTF-01d29a1e930604e3e4be1cd238957bc6.fontdata"
+path="res://.godot/imported/04B_30__.TTF-def05e806a663533d821b33af69c8647.fontdata"
 
 [deps]
 
-source_file="res://png/大部分的字體/04B_30__.TTF"
-dest_files=["res://.godot/imported/04B_30__.TTF-01d29a1e930604e3e4be1cd238957bc6.fontdata"]
+source_file="res://png/font/大部分的字體/04B_30__.TTF"
+dest_files=["res://.godot/imported/04B_30__.TTF-def05e806a663533d821b33af69c8647.fontdata"]
 
 [params]
 

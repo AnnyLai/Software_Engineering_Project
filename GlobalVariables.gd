@@ -11,17 +11,17 @@ var currentStorageStart = 0
 var cardsizeUnit = 0
 var CoinAmount = 0
 var GemAmount = 0
+var currentAction = 0
 
-var http_client = preload("res://HttpClient.tscn")
-var url: String = "https://127.0.0.1:5000/"
+
 var reg_func: String = 'register'
 var login_func: String = 'login'
-var forgot_func: String = 'forgot'
+var forgot_func: String = 'forget'
 var register_args = {'username': 'c0xffee', 'password': '12345678', 'email': 'haha@mail.com', 'nickname': 'player'}
 var login_args = {'username': 'c0xffee', 'password': '12345678'}
-var forgot_args = {'username': 'c0xffee', 'email': 'haha@mail.com'}
+var forgot_args = {'email': 'haha@mail.com'}#'username': 'c0xffee', 
 var PlayerID = "VOIDSALAMANDER12"
-
+var Accounts = []
 var CardUnit = preload("res://Gacha/CardUnit.tscn")
 
 # Characterinfo = [Type, Attack, Defence, Health, Name]

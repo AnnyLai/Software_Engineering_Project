@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_0170e"]
 [ext_resource type="Script" path="res://ForgottenPwPage.gd" id="1_lkdm6"]
-[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="3_1r7pf"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_4eamn"]
 
 [sub_resource type="SystemFont" id="SystemFont_ycdgq"]
 font_names = PackedStringArray("Constantia")
 
-[sub_resource type="SystemFont" id="SystemFont_joe8l"]
+[sub_resource type="SystemFont" id="SystemFont_p7tj7"]
 font_names = PackedStringArray("Constantia")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmo7s"]
@@ -23,7 +23,7 @@ offset_top = 89.0
 offset_right = 806.0
 offset_bottom = 128.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
+theme_override_fonts/font = ExtResource("3_4eamn")
 theme_override_font_sizes/font_size = 35
 text = "RESET PASSWORD"
 horizontal_alignment = 1
@@ -35,7 +35,7 @@ offset_top = 150.0
 offset_right = 841.0
 offset_bottom = 222.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
+theme_override_fonts/font = ExtResource("3_4eamn")
 theme_override_font_sizes/font_size = 18
 text = "ENTER YOUR USERNAME AND EMAIL,
 WE WILL SEND YOUR EMAIL
@@ -46,20 +46,22 @@ vertical_alignment = 1
 [node name="Whole" type="HSplitContainer" parent="."]
 offset_left = 320.0
 offset_top = 251.0
-offset_right = 840.0
+offset_right = 860.0
 offset_bottom = 376.0
-theme_override_constants/separation = 20
+theme_override_constants/separation = 40
 split_offset = 200
+dragger_visibility = 1
 
 [node name="Labels" type="VSplitContainer" parent="Whole"]
 layout_mode = 2
 theme_override_constants/separation = 25
 split_offset = 50
+dragger_visibility = 1
 
 [node name="UserIDLabel" type="Label" parent="Whole/Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
+theme_override_fonts/font = ExtResource("3_4eamn")
 theme_override_font_sizes/font_size = 25
 text = "USERNAME"
 horizontal_alignment = 1
@@ -68,7 +70,7 @@ vertical_alignment = 1
 [node name="EmailLabel" type="Label" parent="Whole/Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
+theme_override_fonts/font = ExtResource("3_4eamn")
 theme_override_font_sizes/font_size = 25
 text = "EMAIL"
 horizontal_alignment = 1
@@ -78,6 +80,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 25
 split_offset = 50
+dragger_visibility = 1
 
 [node name="UserID" type="LineEdit" parent="Whole/InputBox"]
 layout_mode = 2
@@ -86,7 +89,7 @@ theme_override_font_sizes/font_size = 20
 
 [node name="Email" type="LineEdit" parent="Whole/InputBox"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_joe8l")
+theme_override_fonts/font = SubResource("SystemFont_p7tj7")
 theme_override_font_sizes/font_size = 20
 
 [node name="Send" type="MarginContainer" parent="."]
@@ -98,7 +101,7 @@ offset_bottom = 465.0
 [node name="SendLabel" type="Label" parent="Send"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
+theme_override_fonts/font = ExtResource("3_4eamn")
 theme_override_font_sizes/font_size = 33
 text = "SEND"
 horizontal_alignment = 1

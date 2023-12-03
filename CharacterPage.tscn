@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_ni0ma"]
 [ext_resource type="Script" path="res://CharacterPage.gd" id="1_xhnmh"]
-[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="3_jj5k4"]
-[ext_resource type="FontFile" uid="uid://s44dpneaad4g" path="res://png/id字體.ttf" id="4_n1137"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_evvlu"]
+[ext_resource type="FontFile" uid="uid://s44dpneaad4g" path="res://png/font/id字體.ttf" id="4_6vjlk"]
 [ext_resource type="Texture2D" uid="uid://dsl3ecoy1s3pn" path="res://png/MainScene/錢跟鑽.png" id="5_hy13r"]
 
 [sub_resource type="SystemFont" id="SystemFont_8jkkd"]
@@ -25,7 +25,7 @@ offset_top = 38.0
 offset_right = 308.0
 offset_bottom = 73.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_fonts/font = ExtResource("3_evvlu")
 theme_override_font_sizes/font_size = 30
 text = "Player"
 
@@ -35,7 +35,7 @@ offset_top = 82.0
 offset_right = 362.0
 offset_bottom = 112.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("4_n1137")
+theme_override_fonts/font = ExtResource("4_6vjlk")
 theme_override_font_sizes/font_size = 25
 text = "ID: "
 
@@ -45,7 +45,7 @@ offset_top = 35.0
 offset_right = 845.0
 offset_bottom = 75.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_fonts/font = ExtResource("3_evvlu")
 theme_override_font_sizes/font_size = 30
 text = "1000"
 horizontal_alignment = 2
@@ -57,7 +57,7 @@ offset_top = 35.0
 offset_right = 1040.0
 offset_bottom = 75.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_fonts/font = ExtResource("3_evvlu")
 theme_override_font_sizes/font_size = 30
 text = "100"
 horizontal_alignment = 2
@@ -74,7 +74,7 @@ offset_top = 362.0
 offset_right = 255.0
 offset_bottom = 397.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_fonts/font = ExtResource("3_evvlu")
 theme_override_font_sizes/font_size = 25
 text = "Selected"
 horizontal_alignment = 1
@@ -130,7 +130,7 @@ offset_bottom = 520.0
 [node name="BackLabel" type="Label" parent="Back"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_jj5k4")
+theme_override_fonts/font = ExtResource("3_evvlu")
 theme_override_font_sizes/font_size = 30
 text = "BACK"
 horizontal_alignment = 1

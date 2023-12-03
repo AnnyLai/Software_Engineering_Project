@@ -5,6 +5,6 @@
 [node name="BG" type="ParallaxBackground"]
 
 [node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(1.309, 1.309)
+scale = Vector2(1.31, 1.31)
 texture = ExtResource("1_2bwa1")
 centered = false

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_llfno"]
 [ext_resource type="Texture2D" uid="uid://b4kihrq7mv6sk" path="res://png/StartPage/logo-05.png" id="3_eeh0u"]
 [ext_resource type="Texture2D" uid="uid://cfeq84c2bhh53" path="res://png/StartPage/起始畫面.png" id="4_iqffs"]
-[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="5_hktrd"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="5_hktrd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hoxcc"]
 

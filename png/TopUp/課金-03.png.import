@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxqjnex8sqeju"
-path="res://.godot/imported/background.jpg-7e1a0870d472138af6ab30cdf7dac139.ctex"
+uid="uid://dheg6seu76yfg"
+path="res://.godot/imported/課金-03.png-dee9705a98aed6f6ea5957dec59b7637.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://png/background.jpg"
-dest_files=["res://.godot/imported/background.jpg-7e1a0870d472138af6ab30cdf7dac139.ctex"]
+source_file="res://png/TopUp/課金-03.png"
+dest_files=["res://.godot/imported/課金-03.png-dee9705a98aed6f6ea5957dec59b7637.ctex"]
 
 [params]
 

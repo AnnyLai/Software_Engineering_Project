@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0m1ex0u822nx"]
+[gd_scene load_steps=9 format=3 uid="uid://b0m1ex0u822nx"]
 
 [ext_resource type="Script" path="res://Settings.gd" id="1_bdpol"]
 [ext_resource type="Texture2D" uid="uid://rtrfqiywhhxx" path="res://png/設定 底.png" id="1_vl4cn"]
-[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="2_rvrcv"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_52t6f"]
 [ext_resource type="Texture2D" uid="uid://dx6hnbxjvo60q" path="res://png/MainScene/改名字的筆.png" id="3_f8mfb"]
 [ext_resource type="Texture2D" uid="uid://5ac85aq63y4a" path="res://png/音樂 (2).png" id="4_rwj2t"]
 [ext_resource type="Texture2D" uid="uid://d2f6peoekkwrf" path="res://png/音樂.png" id="5_wame0"]
+
+[sub_resource type="SystemFont" id="SystemFont_5kynq"]
+font_names = PackedStringArray("Constantia")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08y5o"]
 
@@ -23,7 +26,7 @@ offset_top = 130.0
 offset_right = 400.0
 offset_bottom = 169.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("2_rvrcv")
+theme_override_fonts/font = ExtResource("3_52t6f")
 theme_override_font_sizes/font_size = 35
 text = "NAME:"
 
@@ -32,7 +35,7 @@ offset_left = 464.0
 offset_top = 124.0
 offset_right = 744.0
 offset_bottom = 169.0
-theme_override_fonts/font = ExtResource("2_rvrcv")
+theme_override_fonts/font = SubResource("SystemFont_5kynq")
 theme_override_font_sizes/font_size = 25
 text = "player"
 editable = false
@@ -52,7 +55,7 @@ offset_top = 217.294
 offset_right = 715.598
 offset_bottom = 251.294
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("2_rvrcv")
+theme_override_fonts/font = ExtResource("3_52t6f")
 theme_override_font_sizes/font_size = 30
 text = "ID: "
 
@@ -66,7 +69,7 @@ offset_top = 251.0
 offset_right = 245.0
 offset_bottom = 278.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("2_rvrcv")
+theme_override_fonts/font = ExtResource("3_52t6f")
 theme_override_font_sizes/font_size = 23
 text = "BGM"
 horizontal_alignment = 1
@@ -92,7 +95,7 @@ offset_top = 251.0
 offset_right = 245.0
 offset_bottom = 278.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("2_rvrcv")
+theme_override_fonts/font = ExtResource("3_52t6f")
 theme_override_font_sizes/font_size = 23
 text = "SE"
 horizontal_alignment = 1
