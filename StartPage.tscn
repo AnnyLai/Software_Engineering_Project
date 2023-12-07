@@ -17,6 +17,7 @@ script = ExtResource("1_aksqk")
 position = Vector2(575, 267)
 scale = Vector2(60, 30)
 shape = SubResource("RectangleShape2D_hoxcc")
+shape_visible = false
 
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(575, 120)
@@ -33,9 +34,14 @@ offset_left = 225.0
 offset_top = 455.0
 offset_right = 925.0
 offset_bottom = 490.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
 theme_override_fonts/font = ExtResource("5_hktrd")
 theme_override_font_sizes/font_size = 28
 text = "PRESS ANYWHERE TO START"
 horizontal_alignment = 1
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

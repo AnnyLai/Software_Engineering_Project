@@ -1,5 +1,6 @@
 extends Node2D
 
+var counter
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +13,17 @@ func _ready():
 	Global.currentStorage = 0
 	Global.currentStorageStart = 0
 	Global.response = {"status": ""}
+	counter = 1
 
 
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://LoginPage.tscn")
+
+
+func _on_timer_timeout():
+	if counter == 1:
+		$Tip.add_theme_color_override("font_color",Color(0.659, 0.616, 0.533))
+		counter = 0
+	else:
+		$Tip.add_theme_color_override("font_color",Color(0.871, 0.851, 0.733))
+		counter = 1
