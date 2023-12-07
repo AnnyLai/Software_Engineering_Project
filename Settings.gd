@@ -11,12 +11,8 @@ func _ready():
 	$Pen.visible = true
 	$PlayerID.text = "ID: " + Global.PlayerID
 	$PlayerID.visible = true
-	$BGM/BGMLabel.visible = true
-	$BGM/Sprite2D.visible = true
-	$BGM/Sprite2D2.visible = true
-	$SE/SELabel.visible = true
-	$SE/Sprite2D.visible = true
-	$SE/Sprite2D2.visible = true
+	$BGM.visible = true
+	$SE.visible = true
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -23,11 +23,13 @@ func _on_log_in_pressed():
 		#var client = Global.http_client.instantiate()
 		#add_child(client)
 		#client.HttpRequest(Global.url)
-		for element in Global.Accounts:
-			if element["username"] == Global.login_args["username"] and element["password"] == Global.login_args["password"]:
-				await get_tree().create_timer(1).timeout
-				get_tree().change_scene_to_file("res://MainPage.tscn")
-		print( "Username or Password inncorrect" )
+		await get_tree().create_timer(2).timeout
+		print("2: ",Global.response)
+		if Global.response["status"] == "Successful Login":
+			remove_child(new)
+			get_tree().change_scene_to_file("res://MainPage.tscn")
+		else:
+			print( "Username or Password inncorrect" )
 	else:
 		print( "not yet finished" )
 

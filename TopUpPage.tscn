@@ -263,3 +263,4 @@ shape = SubResource("RectangleShape2D_lpjdj")
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/Gems30/gem30" to="." method="_on_gem_30_pressed"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/Gems6/gem6" to="." method="_on_gem_6_pressed"]
 [connection signal="pressed" from="ConfirmBG/Cancel/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="ConfirmBG/Confirm/ConfirmButton" to="." method="_on_confirm_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfwpgb4hpty4a"]
+[gd_scene load_steps=11 format=3 uid="uid://bfwpgb4hpty4a"]
 
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_14ej2"]
 [ext_resource type="Script" path="res://SignUpPage.gd" id="1_ijjgh"]
@@ -18,6 +18,9 @@ font_names = PackedStringArray("Constantia")
 font_names = PackedStringArray("Constantia")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3epov"]
+
+[sub_resource type="SystemFont" id="SystemFont_ecvk6"]
+font_names = PackedStringArray("Constantia")
 
 [node name="SignUpPage" type="Node2D"]
 script = ExtResource("1_ijjgh")
@@ -54,7 +57,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("4_27oyt")
 theme_override_font_sizes/font_size = 24
-text = "USER ID"
+text = "USERNAME"
 horizontal_alignment = 1
 
 [node name="PasswordLabel" type="Label" parent="Whole/Left/Labels"]
@@ -74,10 +77,12 @@ dragger_visibility = 1
 [node name="UserIdInputBox" type="LineEdit" parent="Whole/Left/InputBoxes"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_a3pkk")
+theme_override_font_sizes/font_size = 20
 
 [node name="PasswordInputBox" type="LineEdit" parent="Whole/Left/InputBoxes"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_v3q6c")
+theme_override_font_sizes/font_size = 20
 secret = true
 secret_character = "*"
 
@@ -118,10 +123,12 @@ dragger_visibility = 1
 [node name="EmailInputBox" type="LineEdit" parent="Whole/Right/InputBoxes"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_7i532")
+theme_override_font_sizes/font_size = 17
 
 [node name="ConfirmPwInputBox" type="LineEdit" parent="Whole/Right/InputBoxes"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_s5dnb")
+theme_override_font_sizes/font_size = 20
 secret = true
 secret_character = "*"
 
@@ -154,5 +161,22 @@ horizontal_alignment = 1
 position = Vector2(93, 15)
 scale = Vector2(9.5, 2.5)
 shape = SubResource("RectangleShape2D_3epov")
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+position = Vector2i(326, 193)
+size = Vector2i(500, 150)
+always_on_top = true
+min_size = Vector2i(500, 150)
+max_size = Vector2i(500, 150)
+
+[node name="Label" type="Label" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 496.0
+offset_bottom = 146.0
+theme_override_fonts/font = SubResource("SystemFont_ecvk6")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="SignUp/SignUp" to="." method="_on_sign_up_pressed"]
