@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Storage/StoragePage.gd" id="1_1o46y"]
 [ext_resource type="Texture2D" uid="uid://dsjm6n8njvbqo" path="res://png/frame.png" id="1_n4seb"]
-[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="3_7h7vo"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_7h7vo"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="3_tog2w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljunc"]

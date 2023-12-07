@@ -1,11 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfwpgb4hpty4a"]
+[gd_scene load_steps=11 format=3 uid="uid://bfwpgb4hpty4a"]
 
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_14ej2"]
 [ext_resource type="Script" path="res://SignUpPage.gd" id="1_ijjgh"]
 [ext_resource type="Texture2D" uid="uid://b4kihrq7mv6sk" path="res://png/StartPage/logo-05.png" id="3_t51g7"]
-[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="4_uibf0"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="4_27oyt"]
+
+[sub_resource type="SystemFont" id="SystemFont_a3pkk"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_v3q6c"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_7i532"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_s5dnb"]
+font_names = PackedStringArray("Constantia")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3epov"]
+
+[sub_resource type="SystemFont" id="SystemFont_ecvk6"]
+font_names = PackedStringArray("Constantia")
 
 [node name="SignUpPage" type="Node2D"]
 script = ExtResource("1_ijjgh")
@@ -23,29 +38,32 @@ offset_right = 1035.0
 offset_bottom = 380.0
 theme_override_constants/separation = 100
 split_offset = 425
+dragger_visibility = 1
 
 [node name="Left" type="HSplitContainer" parent="Whole"]
 layout_mode = 2
 theme_override_constants/separation = 15
 split_offset = 185
+dragger_visibility = 1
 
 [node name="Labels" type="VSplitContainer" parent="Whole/Left"]
 layout_mode = 2
 theme_override_constants/separation = 60
 split_offset = 75
+dragger_visibility = 1
 
 [node name="UserIdLabel" type="Label" parent="Whole/Left/Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("4_uibf0")
+theme_override_fonts/font = ExtResource("4_27oyt")
 theme_override_font_sizes/font_size = 24
-text = "USER ID"
+text = "USERNAME"
 horizontal_alignment = 1
 
 [node name="PasswordLabel" type="Label" parent="Whole/Left/Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("4_uibf0")
+theme_override_fonts/font = ExtResource("4_27oyt")
 theme_override_font_sizes/font_size = 24
 text = "PASSWORD"
 horizontal_alignment = 1
@@ -54,12 +72,17 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 60
 split_offset = 60
+dragger_visibility = 1
 
 [node name="UserIdInputBox" type="LineEdit" parent="Whole/Left/InputBoxes"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_a3pkk")
+theme_override_font_sizes/font_size = 20
 
 [node name="PasswordInputBox" type="LineEdit" parent="Whole/Left/InputBoxes"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_v3q6c")
+theme_override_font_sizes/font_size = 20
 secret = true
 secret_character = "*"
 
@@ -67,16 +90,18 @@ secret_character = "*"
 layout_mode = 2
 theme_override_constants/separation = 15
 split_offset = 185
+dragger_visibility = 1
 
 [node name="Labels" type="VSplitContainer" parent="Whole/Right"]
 layout_mode = 2
 theme_override_constants/separation = 60
 split_offset = 75
+dragger_visibility = 1
 
 [node name="EmailLabel" type="Label" parent="Whole/Right/Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("4_uibf0")
+theme_override_fonts/font = ExtResource("4_27oyt")
 theme_override_font_sizes/font_size = 24
 text = "EMAIL"
 horizontal_alignment = 1
@@ -84,7 +109,7 @@ horizontal_alignment = 1
 [node name="ConfirmPwLabel" type="Label" parent="Whole/Right/Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("4_uibf0")
+theme_override_fonts/font = ExtResource("4_27oyt")
 theme_override_font_sizes/font_size = 24
 text = " CONFIRM
 PASSWORD"
@@ -93,14 +118,30 @@ PASSWORD"
 layout_mode = 2
 theme_override_constants/separation = 60
 split_offset = 60
+dragger_visibility = 1
 
 [node name="EmailInputBox" type="LineEdit" parent="Whole/Right/InputBoxes"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_7i532")
+theme_override_font_sizes/font_size = 17
 
 [node name="ConfirmPwInputBox" type="LineEdit" parent="Whole/Right/InputBoxes"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_s5dnb")
+theme_override_font_sizes/font_size = 20
 secret = true
 secret_character = "*"
+
+[node name="EmailWarning" type="Label" parent="Whole/Right/InputBoxes"]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+visible = false
+offset_left = 810.0
+offset_top = 200.0
+offset_right = 1035.0
+offset_bottom = 380.0
+dragger_visibility = 1
 
 [node name="SignUp" type="MarginContainer" parent="."]
 offset_left = 483.0
@@ -111,7 +152,7 @@ offset_bottom = 467.0
 [node name="SignUpLabel" type="Label" parent="SignUp"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("4_uibf0")
+theme_override_fonts/font = ExtResource("4_27oyt")
 theme_override_font_sizes/font_size = 30
 text = "SIGN UP"
 horizontal_alignment = 1
@@ -120,5 +161,22 @@ horizontal_alignment = 1
 position = Vector2(93, 15)
 scale = Vector2(9.5, 2.5)
 shape = SubResource("RectangleShape2D_3epov")
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+position = Vector2i(326, 193)
+size = Vector2i(500, 150)
+always_on_top = true
+min_size = Vector2i(500, 150)
+max_size = Vector2i(500, 150)
+
+[node name="Label" type="Label" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 496.0
+offset_bottom = 146.0
+theme_override_fonts/font = SubResource("SystemFont_ecvk6")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="SignUp/SignUp" to="." method="_on_sign_up_pressed"]

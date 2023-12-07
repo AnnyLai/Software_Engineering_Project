@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://LoginPage.gd" id="1_r4ltg"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="2_7yupd"]
-[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="3_0gjqo"]
 [ext_resource type="Texture2D" uid="uid://b4kihrq7mv6sk" path="res://png/StartPage/logo-05.png" id="3_3owdf"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="4_4ixtg"]
 
 [sub_resource type="SystemFont" id="SystemFont_0o5s8"]
 font_names = PackedStringArray("Constantia")
@@ -35,19 +35,20 @@ offset_right = 531.0
 offset_bottom = 302.0
 theme_override_constants/separation = 25
 split_offset = 45
+dragger_visibility = 1
 
 [node name="UserID" type="Label" parent="Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_0gjqo")
+theme_override_fonts/font = ExtResource("4_4ixtg")
 theme_override_font_sizes/font_size = 30
-text = "User ID"
+text = "Username"
 vertical_alignment = 2
 
 [node name="Password" type="Label" parent="Labels"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_0gjqo")
+theme_override_fonts/font = ExtResource("4_4ixtg")
 theme_override_font_sizes/font_size = 30
 text = "PASSWORD"
 vertical_alignment = 2
@@ -61,6 +62,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 1.5
 theme_override_constants/separation = 25
 split_offset = 45
+dragger_visibility = 1
 
 [node name="UserID" type="LineEdit" parent="InputBox"]
 layout_mode = 2
@@ -88,7 +90,7 @@ offset_bottom = 384.0
 [node name="LogInLabel" type="Label" parent="LogIn"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_0gjqo")
+theme_override_fonts/font = ExtResource("4_4ixtg")
 theme_override_font_sizes/font_size = 35
 text = "LOG IN"
 
@@ -106,7 +108,7 @@ offset_bottom = 436.0
 [node name="or" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
-theme_override_fonts/font = ExtResource("3_0gjqo")
+theme_override_fonts/font = ExtResource("4_4ixtg")
 theme_override_font_sizes/font_size = 20
 text = "or "
 
@@ -119,7 +121,7 @@ layout_mode = 2
 size_flags_vertical = 1
 size_flags_stretch_ratio = 2.7
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_0gjqo")
+theme_override_fonts/font = ExtResource("4_4ixtg")
 theme_override_font_sizes/font_size = 22
 text = "SIGN UP"
 
@@ -138,7 +140,7 @@ offset_bottom = 477.0
 [node name="ForgottenPwLabel" type="Label" parent="ForgottenPassword"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
-theme_override_fonts/font = ExtResource("3_0gjqo")
+theme_override_fonts/font = ExtResource("4_4ixtg")
 theme_override_font_sizes/font_size = 20
 text = "FORGOTTEN YOUR PASSWORD"
 

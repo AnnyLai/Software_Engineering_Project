@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://MainPage.gd" id="1_2c2q0"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="2_hjpnk"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_ggtaq"]
 [ext_resource type="Texture2D" uid="uid://d0dc81i4vmo7o" path="res://png/MainScene/抽卡.png" id="3_k2bps"]
-[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="3_k8ob0"]
 [ext_resource type="Texture2D" uid="uid://biylss5ftb8tj" path="res://png/MainScene/背包.png" id="4_7i2un"]
-[ext_resource type="FontFile" uid="uid://s44dpneaad4g" path="res://png/id字體.ttf" id="5_lp0p5"]
+[ext_resource type="FontFile" uid="uid://s44dpneaad4g" path="res://png/font/id字體.ttf" id="4_y1pw8"]
 [ext_resource type="Texture2D" uid="uid://do4wqlhjrjojy" path="res://png/MainScene/新房間.png" id="5_rbwjw"]
 [ext_resource type="Texture2D" uid="uid://btq68yp1u4500" path="res://png/MainScene/快速配對.png" id="6_gv30g"]
 [ext_resource type="Texture2D" uid="uid://badl5u37qsvol" path="res://png/MainScene/選角.png" id="7_mprot"]
@@ -21,49 +21,58 @@ script = ExtResource("1_2c2q0")
 
 [node name="BG" parent="." instance=ExtResource("2_hjpnk")]
 
-[node name="Name" type="Label" parent="."]
+[node name="NameAndID" type="Node2D" parent="."]
+
+[node name="Name" type="Label" parent="NameAndID"]
 offset_left = 58.0
 offset_top = 38.0
 offset_right = 308.0
 offset_bottom = 73.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_k8ob0")
+theme_override_fonts/font = ExtResource("3_ggtaq")
 theme_override_font_sizes/font_size = 30
 text = "Player"
 
-[node name="PlayerID" type="Label" parent="."]
+[node name="PlayerID" type="Label" parent="NameAndID"]
 offset_left = 62.0
 offset_top = 82.0
 offset_right = 362.0
 offset_bottom = 112.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("5_lp0p5")
+theme_override_fonts/font = ExtResource("4_y1pw8")
 theme_override_font_sizes/font_size = 25
 text = "ID: "
 
-[node name="CoinAmount" type="Label" parent="."]
+[node name="CoinAndDiamond" type="Node2D" parent="."]
+
+[node name="CoinAmount" type="Label" parent="CoinAndDiamond"]
 offset_left = 685.0
 offset_top = 35.0
 offset_right = 845.0
 offset_bottom = 75.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_k8ob0")
+theme_override_fonts/font = ExtResource("3_ggtaq")
 theme_override_font_sizes/font_size = 30
 text = "1000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="GemAmount" type="Label" parent="."]
+[node name="GemAmount" type="Label" parent="CoinAndDiamond"]
 offset_left = 940.0
 offset_top = 35.0
 offset_right = 1040.0
 offset_bottom = 75.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_k8ob0")
+theme_override_fonts/font = ExtResource("3_ggtaq")
 theme_override_font_sizes/font_size = 30
 text = "100"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="CoinAndGem" type="TouchScreenButton" parent="CoinAndDiamond"]
+position = Vector2(636, 24)
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("9_gqaaq")
 
 [node name="Character" type="TouchScreenButton" parent="."]
 position = Vector2(69, 132)
@@ -79,11 +88,6 @@ texture_normal = ExtResource("3_k2bps")
 position = Vector2(236, 333)
 scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("4_7i2un")
-
-[node name="CoinAndGem" type="TouchScreenButton" parent="."]
-position = Vector2(636, 24)
-scale = Vector2(1.3, 1.3)
-texture_normal = ExtResource("9_gqaaq")
 
 [node name="NewRoom" type="TouchScreenButton" parent="."]
 position = Vector2(902, 193)
@@ -115,7 +119,7 @@ scale = Vector2(44, 2.3)
 shape = SubResource("RectangleShape2D_15l7t")
 
 [node name="Right" type="TouchScreenButton" parent="Back"]
-position = Vector2(826.581, 204.236)
+position = Vector2(825.817, 204.236)
 scale = Vector2(5.5, 20.5)
 shape = SubResource("RectangleShape2D_15l7t")
 
@@ -124,10 +128,10 @@ position = Vector2(440.348, 22.1274)
 scale = Vector2(44, 2.3)
 shape = SubResource("RectangleShape2D_15l7t")
 
+[connection signal="pressed" from="CoinAndDiamond/CoinAndGem" to="." method="_on_coin_and_gem_pressed"]
 [connection signal="pressed" from="Character" to="." method="_on_character_pressed"]
 [connection signal="pressed" from="Gatcha" to="." method="_on_gatcha_pressed"]
 [connection signal="pressed" from="Storage" to="." method="_on_storage_pressed"]
-[connection signal="pressed" from="CoinAndGem" to="." method="_on_coin_and_gem_pressed"]
 [connection signal="pressed" from="NewRoom" to="." method="_on_new_room_pressed"]
 [connection signal="pressed" from="QuickMatch" to="." method="_on_quick_match_pressed"]
 [connection signal="pressed" from="Settings" to="Back" method="_on_settings_pressed"]

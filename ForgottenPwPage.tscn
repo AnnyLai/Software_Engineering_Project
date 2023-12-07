@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://djpbjvuf5yxp1"]
+[gd_scene load_steps=6 format=3 uid="uid://djpbjvuf5yxp1"]
 
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://BG.tscn" id="1_0170e"]
 [ext_resource type="Script" path="res://ForgottenPwPage.gd" id="1_lkdm6"]
-[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/大部分的字體/04B_30__.TTF" id="3_1r7pf"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_4eamn"]
 
-[sub_resource type="SystemFont" id="SystemFont_ycdgq"]
-font_names = PackedStringArray("Constantia")
-
-[sub_resource type="SystemFont" id="SystemFont_joe8l"]
+[sub_resource type="SystemFont" id="SystemFont_p7tj7"]
 font_names = PackedStringArray("Constantia")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmo7s"]
@@ -19,86 +16,63 @@ script = ExtResource("1_lkdm6")
 
 [node name="ResetPwLabel" type="Label" parent="."]
 offset_left = 346.0
-offset_top = 89.0
+offset_top = 100.0
 offset_right = 806.0
-offset_bottom = 128.0
+offset_bottom = 139.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
+theme_override_fonts/font = ExtResource("3_4eamn")
 theme_override_font_sizes/font_size = 35
 text = "RESET PASSWORD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Directions" type="Label" parent="."]
-offset_left = 311.0
-offset_top = 150.0
-offset_right = 841.0
-offset_bottom = 222.0
+offset_left = 309.0
+offset_top = 185.0
+offset_right = 839.0
+offset_bottom = 260.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
-theme_override_font_sizes/font_size = 18
-text = "ENTER YOUR USERNAME AND EMAIL,
-WE WILL SEND YOUR EMAIL
-A NEW PASSWORD."
+theme_override_fonts/font = ExtResource("3_4eamn")
+theme_override_font_sizes/font_size = 21
+text = "ENTER YOUR EMAIL,
+WE WILL SEND A VERIFY CODE
+TO RESET NEW PASSWORD."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Whole" type="HSplitContainer" parent="."]
-offset_left = 320.0
-offset_top = 251.0
-offset_right = 840.0
-offset_bottom = 376.0
+[node name="SendEmail" type="HSplitContainer" parent="."]
+offset_left = 290.0
+offset_top = 300.0
+offset_right = 870.0
+offset_bottom = 360.0
 theme_override_constants/separation = 20
-split_offset = 200
+split_offset = 180
+dragger_visibility = 1
 
-[node name="Labels" type="VSplitContainer" parent="Whole"]
-layout_mode = 2
-theme_override_constants/separation = 25
-split_offset = 50
-
-[node name="UserIDLabel" type="Label" parent="Whole/Labels"]
+[node name="EmailLabel" type="Label" parent="SendEmail"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
-theme_override_font_sizes/font_size = 25
-text = "USERNAME"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="EmailLabel" type="Label" parent="Whole/Labels"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
+theme_override_fonts/font = ExtResource("3_4eamn")
 theme_override_font_sizes/font_size = 25
 text = "EMAIL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InputBox" type="VSplitContainer" parent="Whole"]
+[node name="Email" type="LineEdit" parent="SendEmail"]
 layout_mode = 2
-theme_override_constants/separation = 25
-split_offset = 50
-
-[node name="UserID" type="LineEdit" parent="Whole/InputBox"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_ycdgq")
-theme_override_font_sizes/font_size = 20
-
-[node name="Email" type="LineEdit" parent="Whole/InputBox"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_joe8l")
+theme_override_fonts/font = SubResource("SystemFont_p7tj7")
 theme_override_font_sizes/font_size = 20
 
 [node name="Send" type="MarginContainer" parent="."]
 offset_left = 511.0
-offset_top = 425.0
+offset_top = 415.0
 offset_right = 641.0
-offset_bottom = 465.0
+offset_bottom = 455.0
 
 [node name="SendLabel" type="Label" parent="Send"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
-theme_override_fonts/font = ExtResource("3_1r7pf")
+theme_override_fonts/font = ExtResource("3_4eamn")
 theme_override_font_sizes/font_size = 33
 text = "SEND"
 horizontal_alignment = 1
@@ -109,4 +83,98 @@ position = Vector2(65, 19)
 scale = Vector2(7, 2.5)
 shape = SubResource("RectangleShape2D_fmo7s")
 
+[node name="Verify" type="HSplitContainer" parent="."]
+offset_left = 279.0
+offset_top = 167.0
+offset_right = 879.0
+offset_bottom = 397.0
+theme_override_constants/separation = 25
+split_offset = 200
+dragger_visibility = 1
+
+[node name="Labels" type="VSplitContainer" parent="Verify"]
+layout_mode = 2
+theme_override_constants/separation = 25
+split_offset = 145
+dragger_visibility = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Verify/Labels"]
+layout_mode = 2
+theme_override_constants/separation = 25
+split_offset = 60
+
+[node name="EmailLabel" type="Label" parent="Verify/Labels/VSplitContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_4eamn")
+theme_override_font_sizes/font_size = 25
+text = "EMAIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewPasswordLabel" type="Label" parent="Verify/Labels/VSplitContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_4eamn")
+theme_override_font_sizes/font_size = 25
+text = "New Password"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VertifyCodeLabel" type="Label" parent="Verify/Labels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_4eamn")
+theme_override_font_sizes/font_size = 25
+text = "Vertify Code"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InputBox" type="VSplitContainer" parent="Verify"]
+layout_mode = 2
+theme_override_constants/separation = 25
+split_offset = 145
+dragger_visibility = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Verify/InputBox"]
+layout_mode = 2
+theme_override_constants/separation = 25
+split_offset = 60
+
+[node name="Email" type="LineEdit" parent="Verify/InputBox/VSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_p7tj7")
+theme_override_font_sizes/font_size = 20
+
+[node name="NewPassword" type="LineEdit" parent="Verify/InputBox/VSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_p7tj7")
+theme_override_font_sizes/font_size = 20
+
+[node name="VertifyCode" type="LineEdit" parent="Verify/InputBox"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_p7tj7")
+theme_override_font_sizes/font_size = 20
+
+[node name="ResetPassword" type="MarginContainer" parent="."]
+offset_left = 365.0
+offset_top = 415.0
+offset_right = 797.0
+offset_bottom = 455.0
+
+[node name="ResetPasswordLabel" type="Label" parent="ResetPassword"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_4eamn")
+theme_override_font_sizes/font_size = 33
+text = "RESET PASSWORD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetPassword" type="TouchScreenButton" parent="ResetPassword"]
+position = Vector2(214, 19)
+scale = Vector2(22, 2.5)
+shape = SubResource("RectangleShape2D_fmo7s")
+
 [connection signal="pressed" from="Send/Send" to="." method="_on_send_pressed"]
+[connection signal="pressed" from="ResetPassword/ResetPassword" to="." method="_on_reset_password_pressed"]

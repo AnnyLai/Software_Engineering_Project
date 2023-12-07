@@ -7,25 +7,24 @@ var CardSize
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	storageTemp.resize(10)
-	Global.currentStorage = -1
+	Global.currentStorage = Global.RareCardAmount - 1
 	#for i in range(6):
 		#print( Global.storage[i],',' )
+	Global.currentStorageStart = Global.RareCardAmount
 	
 	for k in range(2):
+		if Global.currentStorage == Global.CardAmount:
+			break
 		for j in range(5):
 			Global.cardsizeUnit = 18
 			Global.currentStorage += 1
+			print(Global.currentStorage)
 			if Global.currentStorage == Global.CardAmount:
 				break
 			#if Global.storage[Global.currentStorageStart+k*5+j] > 0:
 			var cardPosition = Vector2( 0, 0)
-			var CardInfo = Global.Card[Global.currentStorageStart+k*5+j]
-			if CardInfo[0] == "Tool":
-				cardPosition = Vector2( 104+205*j , 110+200*k )
-				CardSize = Vector2(Global.cardsizeUnit*7,Global.cardsizeUnit*7)
-			else:
-				cardPosition = Vector2( 122+205*j , 110+200*k )
-				CardSize = Vector2(Global.cardsizeUnit*5,Global.cardsizeUnit*7)
+			cardPosition = Vector2( 104+205*j , 110+200*k )
+			CardSize = Vector2(Global.cardsizeUnit*7,Global.cardsizeUnit*7)
 			
 			storageTemp[k*5+j] = StorageUnit.instantiate()
 			storageTemp[k*5+j].position = cardPosition
