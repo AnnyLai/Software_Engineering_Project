@@ -4,12 +4,10 @@ var StorageUnit = preload("res://Storage/StorageUnit.tscn")
 var storageTemp = []
 var CardSize
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	storageTemp.resize(10)
 	Global.currentStorage = Global.RareCardAmount - 1
-	#for i in range(6):
-		#print( Global.storage[i],',' )
 	Global.currentStorageStart = Global.RareCardAmount
 	
 	for k in range(2):
@@ -21,7 +19,6 @@ func _ready():
 			print(Global.currentStorage)
 			if Global.currentStorage == Global.CardAmount:
 				break
-			#if Global.storage[Global.currentStorageStart+k*5+j] > 0:
 			var cardPosition = Vector2( 0, 0)
 			cardPosition = Vector2( 104+205*j , 110+200*k )
 			CardSize = Vector2(Global.cardsizeUnit*7,Global.cardsizeUnit*7)
@@ -55,9 +52,8 @@ func _ready():
 		$Frame/Frame10/Amount.text = str(Global.storage[Global.currentStorageStart+9])
 
 
-
 func _on_back_pressed():
 	for i in range(10):
 		if storageTemp[i]:
 			storageTemp[i].queue_free()
-	get_tree().change_scene_to_file("res://MainPage.tscn")
+	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")

@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="MainScene"
-run/main_scene="res://StartPage.tscn"
+run/main_scene="res://Login/StartPage.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://GlobalVariables.gd"
+Global="*res://Global/GlobalVariables.gd"
+LoadAndSave="*res://Global/LoadAndSave.gd"
 
 [display]
 
