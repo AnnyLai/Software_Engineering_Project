@@ -32,7 +32,6 @@ func _on_touch_screen_button_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		print("Rename: ",Global.response)
 		if Global.response["status"] == "Successful":
 			Global.Account["nickname"] = $Name/Name.text
 		else:

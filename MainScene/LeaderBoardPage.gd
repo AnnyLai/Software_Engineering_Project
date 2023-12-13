@@ -25,8 +25,6 @@ func _ready():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		print(Global.leaderboard_args)
-		#print("Leader Board: ", Global.response)
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			$Node2D/Score.text = str(Global.Account["kills"])

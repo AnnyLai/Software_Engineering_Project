@@ -19,8 +19,8 @@ func _ready():
 		var new = newcall.instantiate()
 		add_child(new)
 		new.send()
+		
 		await get_tree().create_timer(2).timeout
-		print("Search: ", Global.response)
 		if Global.response["status"] == "Successful":
 			$Loading.visible = false
 			Global.CoinAmount = Global.response["coin"]

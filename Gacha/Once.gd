@@ -23,7 +23,6 @@ func _on_pressed():
 		Global.gacha_args["username"] = Global.Account["username"]
 		Global.gacha_args["draws"] = 1
 		Global.gacha_args["cookies"] = Global.Account["cookies"]
-		print(Global.gacha_args)
 		Global.currentAction = 7
 		newcall = load("res://Global/HttpRequest.tscn")
 		new = newcall.instantiate()
@@ -31,7 +30,6 @@ func _on_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		print("Gacha once: ", Global.response)
 	else:
 		$"../../Notice".visible = true
 		$"../../Notice/Label".text = "Not enough diamonds"
@@ -41,17 +39,12 @@ func _on_pressed():
 func _on_transition_animation_finished():
 	if press == 1:
 		$"../../Transition".visible = false
-		
 		$"../../Back".visible = false
-		
-		#drawOnce()
 		
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			var cardPosition = Vector2( 0, 0)
 			Global.storage[int(Global.response["1"]-1)] += 1
-			print("Card: ", Global.response["1"]-1)
-			print("Cards: ", Global.Card[2])
 			var CardInfo = Global.Card[int(Global.response["1"]-1)]
 			if CardInfo[0] == "Tool":
 				cardPosition = Vector2(400,120)
@@ -80,7 +73,6 @@ func _on_transition_animation_finished():
 			new.send()
 			
 			await get_tree().create_timer(2).timeout
-			print("Gacha once: ", Global.response)
 		''''''
 		$"../../Continue".visible = true
 
@@ -102,7 +94,6 @@ func _on_continue_pressed():
 	$"../../CardSample/Card".texture = load(CardImg)
 	$"../../CardSample".visible = true
 	$"../../Possibility".text = str(float(Global.Pcard[Global.currentCard]-Global.Pcard[Global.currentCard-1])*100.0/Global.Pcard[Global.CardAmount-1])+"%"
-	print($"../../Possibility".text)
 	$"../../CardSample/Timer".start()
 	$"../../List".visible = true
 

@@ -72,7 +72,6 @@ func _on_reset_password_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		print("Reset Password: ", Global.response)
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			get_tree().change_scene_to_file("res://Login/LoginPage.tscn")

@@ -32,13 +32,12 @@ func _on_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		print("Gacha ten times: ", Global.response)
 	else:
 		$"../../Notice".visible = true
 		$"../../Notice/Label".text = "Not enough diamonds"
 		await get_tree().create_timer(2).timeout
 		$"../../Notice".visible = false
-	#print(300)
+		
 	
 func _on_transition_animation_finished():
 	if press == 1:
@@ -89,49 +88,7 @@ func _on_transition_animation_finished():
 			new.send()
 			
 			await get_tree().create_timer(2).timeout
-			print("Gacha ten times: ", Global.response)
 		''''''
-
-
-func drawTenTimes():
-	cardTemp.resize(10)
-	$"../../Continue".visible = true
-	$"../../Back".visible = false
-	
-	for k in range(2):
-		for j in range(5):
-			Global.cardsizeUnit = 15
-			Global.cards += 1
-			var randnum
-			var i = 0
-			var cardPosition = Vector2( 0, 0)
-			if Global.cards == 50:
-				randnum = randi() % Global.RareCardAmount
-				i = Global.RareCards[randnum]
-				Global.cards = 0
-			else:
-				randnum = ( randi() + Global.lastrand ) % 10000 + 1
-				if randnum > Global.Pcard[0]:
-					while randnum > Global.Pcard[i]:
-						i += 1
-						
-			Global.storage[i] += 1
-			var CardInfo = Global.Card[i]
-			if CardInfo[0] == "Tool":
-				cardPosition = Vector2(135+190*j , 95+230*k)
-				CardSize = Vector2(Global.cardsizeUnit*8,Global.cardsizeUnit*8)
-			else:
-				cardPosition = Vector2(115+190*j , 115+230*k)
-				CardSize = Vector2(Global.cardsizeUnit*11,Global.cardsizeUnit*5)
-			Global.lastrand = randnum
-			Global.currentCard = i
-	
-			cardTemp[k*5+j] = Global.CardUnit.instantiate()
-			cardTemp[k*5+j].position = cardPosition
-			cardTemp[k*5+j].visible = false
-			cardTemp[k*5+j].scale *= CardSize / cardTemp[k*5+j].size
-			$"../../Cards".add_child(cardTemp[k*5+j])
-			cardTemp[k*5+j].visible = true
 
 
 func _on_continue_pressed():
