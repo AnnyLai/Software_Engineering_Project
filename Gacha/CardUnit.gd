@@ -13,14 +13,14 @@ func SetCard():
 	var CardImg
 	if CardInfo[0] == "Tool":
 		CardImg = str( "res://png/Gacha/Cards/" , CardInfo[0] , "/" , CardInfo[1] , ".png" )
-		get_node(".").size.x = 535
-		get_node(".").size.y = 535
+		$".".size.x = 535
+		$".".size.y = 535
 	else:
-		CardImg = str( "res://png/Gacha/Cards/" , CardInfo[0] , "/" , CardInfo[4] , ".png" )
-		get_node(".").size.x = 1152
-		get_node(".").size.y = 535
+		CardImg = str( "res://png/Gacha/Cards/" , CardInfo[0] , "/" , CardInfo[1] , ".png" )
+		$".".size.x = 1152
+		$".".size.y = 535
 		
-	var CardSize = get_node(".").size
+	var CardSize = $".".size
 	$Card.texture = load(CardImg)
 	$Card.scale = CardSize / $Card.texture.get_size()
 	$Card.visible = true
