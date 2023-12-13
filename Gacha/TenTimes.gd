@@ -43,9 +43,9 @@ func _on_transition_animation_finished():
 	if press == 1:
 		$"../../Transition".visible = false
 		$"../../Back".visible = false
+		$"../../Continue/ContinueLabel".add_theme_color_override("font_color",Color(0.451, 0.388, 0.341))
 		$"../../Continue".visible = true
-		#drawTenTimes()
-		print(Global.response)
+		
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			
@@ -71,6 +71,7 @@ func _on_transition_animation_finished():
 					cardTemp[k*5+j].scale *= CardSize / cardTemp[k*5+j].size
 					$"../../Cards".add_child(cardTemp[k*5+j])
 					cardTemp[k*5+j].visible = true
+			Global.GemAmount -= 50
 		else:
 			remove_child(new)
 			

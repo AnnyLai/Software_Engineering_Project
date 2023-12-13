@@ -7,6 +7,7 @@ func _ready():
 	$Back.visible = false
 	$ScrollContainer.visible = false
 	$Node2D.visible = false
+	$Label.visible = false
 	
 	Global.leaderboard_args["username"] = Global.Account["username"]
 	Global.leaderboard_args["time"] = Global.Account["time"]
@@ -224,10 +225,7 @@ func _ready():
 	$Back.visible = true
 	$ScrollContainer.visible = true
 	$Node2D.visible = true
-
-
-func _process(delta):
-	pass
+	$Label.visible = true
 
 
 func _on_back_pressed():
