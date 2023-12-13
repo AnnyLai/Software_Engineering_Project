@@ -19,9 +19,9 @@ script = ExtResource("1_36eq6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 offset_left = 372.0
-offset_top = 54.0
+offset_top = 83.0
 offset_right = 1072.0
-offset_bottom = 544.0
+offset_bottom = 573.0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
@@ -648,5 +648,15 @@ scale = Vector2(6.5, 2.5)
 shape = SubResource("RectangleShape2D_ylayw")
 
 [node name="Loading" parent="." instance=ExtResource("9_tt2wh")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 389.0
+offset_top = 28.0
+offset_right = 1062.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("5_jxikx")
+theme_override_font_sizes/font_size = 30
+text = "    Nickname    Kills  Time"
 
 [connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]

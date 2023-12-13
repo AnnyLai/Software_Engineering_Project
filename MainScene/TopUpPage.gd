@@ -120,7 +120,6 @@ func _on_cancel_button_pressed():
 
 func _on_confirm_button_pressed():
 	if amount < 100:
-		Global.GemAmount += amount
 		Global.topup_args["username"] = Global.Account["username"]
 		Global.topup_args["coin"] = 0
 		Global.topup_args["diamond"] = amount
@@ -133,14 +132,8 @@ func _on_confirm_button_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		print("Top up: ", Global.response)
 		if Global.response["status"] == "Successful":
-			pass
-		elif Global.response["status"] == "Diamond not Enough":
-			$Notice/Label.text = "Diamond not Enough"
-			$Notice.visible = true
-			await get_tree().create_timer(2).timeout
-			$Notice.visible = false
+			Global.GemAmount += amount
 		else:
 			$Notice/Label.text = "Failed\nTry again?"
 			$Notice.visible = true
@@ -160,14 +153,8 @@ func _on_confirm_button_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		print("Top up: ", Global.response)
 		if Global.response["status"] == "Successful":
-			pass
-		elif Global.response["status"] == "Diamond not Enough":
-			$Notice/Label.text = "Diamond not Enough"
-			$Notice.visible = true
-			await get_tree().create_timer(2).timeout
-			$Notice.visible = false
+			Global.CoinAmount += amount
 		else:
 			$Notice/Label.text = "Failed\nTry again?"
 			$Notice.visible = true

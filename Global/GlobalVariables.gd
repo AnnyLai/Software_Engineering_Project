@@ -46,7 +46,11 @@ var Card = {
 	Bottle :
 		["Tool", "bottle"]
 }
-	
+
 var RareCards = [Ecologist, WarCorrespondent]
 var RareCardAmount = 2
 var Pcard = [10.0, 30.0, 100.0]
+
+
+
+
