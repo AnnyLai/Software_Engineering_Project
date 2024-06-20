@@ -23,7 +23,9 @@ LoadAndSave="*res://Global/LoadAndSave.gd"
 [display]
 
 window/size/viewport_height=538
-window/stretch/mode="viewport"
+window/size/window_width_override=960
+window/size/window_height_override=540
+window/stretch/mode="canvas_items"
 
 [input_devices]
 
