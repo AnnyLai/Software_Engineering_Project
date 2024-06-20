@@ -10,26 +10,10 @@ config_version=5
 
 [application]
 
-config/name="MainScene"
-run/main_scene="res://Login/StartPage.tscn"
+config/name="MapGenerate"
+run/main_scene="res://start.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Global="*res://Global/GlobalVariables.gd"
-LoadAndSave="*res://Global/LoadAndSave.gd"
-
-[display]
-
-window/size/viewport_height=538
-window/size/window_width_override=960
-window/size/window_height_override=540
-window/stretch/mode="canvas_items"
-
-[input_devices]
-
-pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
