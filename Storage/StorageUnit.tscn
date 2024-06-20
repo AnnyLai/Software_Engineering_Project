@@ -5,6 +5,7 @@
 [node name="StorageUnit" type="MarginContainer"]
 offset_right = 535.0
 offset_bottom = 535.0
+scale = Vector2(0.21, 0.21)
 script = ExtResource("1_smdln")
 
 [node name="Object" type="Sprite2D" parent="."]

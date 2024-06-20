@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://buf8qqwl5ptqc"]
+
+[ext_resource type="Script" path="res://things/resorces/tree.gd" id="1_0jkbn"]
+[ext_resource type="Texture2D" uid="uid://c87ljahs1oagr" path="res://art/tilemap-04.png" id="1_ftl07"]
+[ext_resource type="PackedScene" uid="uid://dtbt13cydvq55" path="res://things/item/resorces_item/wood.tscn" id="2_h6crc"]
+[ext_resource type="Texture2D" uid="uid://bjcilakpnyv02" path="res://art/joystick.png" id="3_7y28d"]
+[ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="5_ubllb"]
+[ext_resource type="Texture2D" uid="uid://dc6yx4e317edp" path="res://art/Healthbar/Healthover.png" id="6_ish2v"]
+[ext_resource type="Texture2D" uid="uid://b16mvt6thnf05" path="res://art/Healthbar/HealthProcess.png" id="6_t780w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdk2t"]
+radius = 8.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nappt"]
+radius = 1.0
+height = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3v81"]
+size = Vector2(52, 20)
+
+[node name="tree" type="Node2D"]
+script = ExtResource("1_0jkbn")
+item = ExtResource("2_h6crc")
+
+[node name="tree_A" type="Sprite2D" parent="."]
+texture = ExtResource("1_ftl07")
+offset = Vector2(0, -53)
+region_enabled = true
+region_rect = Rect2(0, 32, 96, 128)
+
+[node name="spawnRegion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawnRegion"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pdk2t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nappt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_d3v81")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2(-37, -17)
+scale = Vector2(0.193277, 0.201681)
+texture_normal = ExtResource("3_7y28d")
+
+[node name="Label" type="Label" parent="TouchScreenButton"]
+offset_left = 20.6956
+offset_top = 19.8333
+offset_right = 99.6956
+offset_bottom = 93.8333
+theme_override_font_sizes/font_size = 24
+text = "Collect
+Wood"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -24.0
+offset_top = -125.0
+offset_right = 879.0
+offset_bottom = 10.0
+scale = Vector2(0.05, 0.05)
+value = 100.0
+texture_under = ExtResource("5_ubllb")
+texture_over = ExtResource("6_ish2v")
+texture_progress = ExtResource("6_t780w")
+tint_progress = Color(1, 1, 0.513726, 1)
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
