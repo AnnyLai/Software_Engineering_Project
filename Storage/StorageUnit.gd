@@ -4,19 +4,23 @@ func _on_visibility_changed():
 	SetStorage()
 
 func SetStorage():
-	#print(Global.currentStorage)
 	var StorageInfo = Global.Card[Global.currentStorage]
+
 	#string of path to png file
 	var CardImg
-	CardImg = str( "res://png/Gacha/Cards/" , StorageInfo[0] , "/" , StorageInfo[1] )
-	if Global.storage[Global.currentStorage] == 0:
-		CardImg = CardImg + "_dark.png"
+	if StorageInfo[0] == "Tool":
+		CardImg = str( "res://png/" , StorageInfo[0] , "/" , StorageInfo[1] , ".png" )
+		get_node(".").size.x = 250
+		get_node(".").size.y = 250
 	else:
-		CardImg = CardImg + ".png"
-	
+		CardImg = str( "res://png/" , StorageInfo[0] , "/" , StorageInfo[4] , ".png" )
+		get_node(".").size.x = 250
+		get_node(".").size.y = 350
+		
 	var CardSize = get_node(".").size
 	$Object.texture = load(CardImg)
 	$Object.scale = CardSize / $Object.texture.get_size()
+	$Board.scale = CardSize / $Board.texture.get_size()
 	$Object.visible = true
 
 
